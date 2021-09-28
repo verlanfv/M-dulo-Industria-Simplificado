@@ -1,0 +1,126 @@
+object dtmSisGestao: TdtmSisGestao
+  OldCreateOrder = False
+  OnCreate = DataModuleCreate
+  Height = 350
+  Width = 379
+  object cdsGeralDados: TClientDataSet
+    Aggregates = <>
+    CommandText = 'select * from geral_configuracao'
+    Params = <>
+    ProviderName = 'dspSisGestao'
+    RemoteServer = lcnSisGestao
+    Left = 135
+    Top = 110
+  end
+  object scnSisGestao: TSQLConnection
+    ConnectionName = 'MySql50'
+    DriverName = 'MySQL'
+    LoginPrompt = False
+    Params.Strings = (
+      'DriverUnit=Data.DBXMySQL'
+      
+        'DriverPackageLoader=TDBXDynalinkDriverLoader,DbxCommonDriver210.' +
+        'bpl'
+      
+        'DriverAssemblyLoader=Borland.Data.TDBXDynalinkDriverLoader,Borla' +
+        'nd.Data.DbxCommonDriver,Version=21.0.0.0,Culture=neutral,PublicK' +
+        'eyToken=91d62ebb5b0d1b1b'
+      
+        'MetaDataPackageLoader=TDBXMySqlMetaDataCommandFactory,DbxMySQLDr' +
+        'iver210.bpl'
+      
+        'MetaDataAssemblyLoader=Borland.Data.TDBXMySqlMetaDataCommandFact' +
+        'ory,Borland.Data.DbxMySQLDriver,Version=21.0.0.0,Culture=neutral' +
+        ',PublicKeyToken=91d62ebb5b0d1b1b'
+      'GetDriverFunc=getSQLDriverMYSQL'
+      'LibraryName=dbxmys.dll'
+      'LibraryNameOsx=libsqlmys.dylib'
+      'VendorLib=LIBMYSQL.dll'
+      'VendorLibWin64=libmysql.dll'
+      'VendorLibOsx=libmysqlclient.dylib'
+      'HostName=daniel-note'
+      'Database=belem'
+      'User_Name=teste'
+      'Password=teste'
+      'MaxBlobSize=-1'
+      'LocaleCode=0000'
+      'Compressed=False'
+      'Encrypted=False'
+      'BlobSize=-1'
+      'ErrorResourceFile=')
+    Left = 32
+    Top = 8
+  end
+  object dspSisGestao: TDataSetProvider
+    DataSet = qryGeralDados
+    Options = [poCascadeDeletes, poCascadeUpdates, poAllowMultiRecordUpdates, poAutoRefresh, poAllowCommandText]
+    Left = 32
+    Top = 59
+  end
+  object qryGeralDados: TSQLQuery
+    DataSource = dtsConsulta
+    MaxBlobSize = 1
+    Params = <>
+    SQL.Strings = (
+      'select * from geral_configuracao')
+    SQLConnection = scnSisGestao
+    Left = 223
+    Top = 110
+  end
+  object lcnSisGestao: TLocalConnection
+    Left = 32
+    Top = 110
+  end
+  object cdsConsulta: TClientDataSet
+    Aggregates = <>
+    CommandText = 'SELECT * FROM GERAL_MENU'
+    Params = <>
+    ProviderName = 'dspSisGestao'
+    RemoteServer = lcnSisGestao
+    Left = 135
+    Top = 8
+  end
+  object cdsGeral: TClientDataSet
+    Aggregates = <>
+    CommandText = 'SELECT * FROM GERAL_MENU'
+    Params = <>
+    ProviderName = 'dspSisGestao'
+    RemoteServer = lcnSisGestao
+    Left = 135
+    Top = 59
+  end
+  object dtsConsulta: TDataSource
+    Left = 223
+    Top = 8
+  end
+  object cdsDevedor: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 135
+    Top = 161
+    object cdsDevedorDiasDevedor: TIntegerField
+      FieldName = 'DiasDevedor'
+    end
+    object cdsDevedorCodigo: TIntegerField
+      FieldName = 'Codigo'
+    end
+    object cdsDevedorNome: TStringField
+      FieldName = 'Nome'
+      Size = 60
+    end
+    object cdsDevedorSaldoDevedor: TFloatField
+      FieldName = 'SaldoDevedor'
+    end
+    object cdsDevedorTelefone: TStringField
+      FieldName = 'Telefone'
+    end
+    object cdsDevedorEmpresa: TIntegerField
+      FieldName = 'Empresa'
+    end
+  end
+  object dtsDevedor: TDataSource
+    DataSet = cdsDevedor
+    Left = 223
+    Top = 161
+  end
+end

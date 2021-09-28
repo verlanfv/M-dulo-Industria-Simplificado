@@ -1,0 +1,338 @@
+{-------------------------------------------------------------------------------
+ Programa..: uDtmSisGestao
+ Empresa...: SULPASSO INFORMÁTICA
+ Finalidade: Gerenciamento das conexões com o banco, configurações, etc...
+
+ Autor          Data     Versão   Descrição
+ Vanessa        JAN/2018 v1.0     Criação
+-------------------------------------------------------------------------------}
+unit uDtmSisGestao;
+
+interface
+
+uses
+  SysUtils, Classes, FMTBcd, DB, DBClient, TConnect, SqlExpr, Provider,
+  IniFiles, Forms, Graphics, ActiveX, ShellAPI, Data.DBXMySQL;
+
+type
+  TdtmSisGestao = class(TDataModule)
+    cdsGeralDados: TClientDataSet;
+    scnSisGestao: TSQLConnection;
+    dspSisGestao: TDataSetProvider;
+    qryGeralDados: TSQLQuery;
+    lcnSisGestao: TLocalConnection;
+    cdsConsulta: TClientDataSet;
+    cdsGeral: TClientDataSet;
+    dtsConsulta: TDataSource;
+    cdsDevedor: TClientDataSet;
+    cdsDevedorDiasDevedor: TIntegerField;
+    cdsDevedorCodigo: TIntegerField;
+    cdsDevedorNome: TStringField;
+    cdsDevedorSaldoDevedor: TFloatField;
+    dtsDevedor: TDataSource;
+    cdsDevedorTelefone: TStringField;
+    cdsDevedorEmpresa: TIntegerField;
+    procedure ApplicationEvents1Exception(Sender: TObject; E: Exception);
+    procedure DataModuleCreate(Sender: TObject);
+    procedure Grava_Dados_Iniciais;
+    procedure Escreve_Dados_INI;
+    procedure Le_Dados_INI;
+    Procedure ConectaMysqlGestao;
+    procedure Preenche_Type_Usuario;
+
+  private
+    { Private declarations }
+
+  public
+
+        bPrimeiravez, bExisteNFCe, bExisteNFe, bDiretorio, bRetSefaz, bLancouNF, bNFeAutomatica : Boolean;
+        sVersaoNFe, sVersaoDLL, sSistema, sModeloLogin, sRetornoLogado, sCaminhoLogin,
+        // delonei para controle de um programa para outro
+        svisualizar,
+        // Variáveis Retorno
+        gsRetEmpresa, gsRetSerie, gsRetNFe, gsRetPedido, gsRetRota, gsRetDataEmissao, gsRetCfop, gsRetProtocolo, gsRetChaveAcesso, gsRetCliente,
+        gsRetErro, gsSituacao, gsRetVariavel, gsRetModelo : String;
+
+    { Public declarations }
+  end;
+
+type
+
+    RARQUIVOINI = record
+                   SERVIDOR           : String;
+                   CAMINHOBASE        : String;
+                   CAMINHONFE         : String;
+                   CORFUNDO           : Integer;
+                   USUARIO            : String;
+                   SENHA              : String;
+                   SISGESTAOSERVIDOR  : String; // UTILIZADO PARA DIRECIONAR O BANCO DIRETAMENTE PARA PASTA SISGESTAO DO COMPUTADOR LOCAL OU SERVIDOR
+                   EXESERVIDOR        : String; // UTILIZADO PARA DIRECIONAR DIRETAMENTE A PASTA SISGESTAO DO SERVIDOR
+    end;
+
+    RUSUARIO = record
+                   USU_CODIGO         : String;
+                   USU_NOME           : String;
+                   SENHA_SENHA        : String;
+                   SENHA_SKIN         : String;
+                   SENHA_CORCAMPOS    : Longint;
+                   USU_RETORNOSENHA   : String;
+    end;
+
+Const
+     sSQLSelecionaUsuario = 'select * from geral_usuario '+
+                            'where usu_codigo = :usucodigo) ';
+
+     VK_PAGEUP = 33;
+     VK_PAGEDOWN = 34;
+
+var
+   dtmSisGestao: TdtmSisGestao;
+   tdSisGestao : TTransactionDesc;
+   tfArquivoIni : TIniFile;
+   ARQUIVOINI : RARQUIVOINI;
+   USUARIO : RUSUARIO;
+
+   sArquivoSobre, sCaminhoIni, sCaminhoExe, sAcao ,sConexao, sFuncCodigo,
+   sSenhaSenha, sRet, sEmpresa, sCaminhoSkin, sArquivoINI, sErro, sCaminho,
+   sRetorno, sAcaoNFe, sAcaoInt, sLiberaEnvio : String;
+   bmPontoDeVolta : TBookMark;
+   ifArquivo : TIniFile;
+
+implementation
+
+uses  Ufuncoes;
+
+{$R *.dfm}
+
+Procedure limpa_variavel(var pRetorno : String);
+begin
+   USUARIO.USU_CODIGO            := '0';  	// CÓDIGO DO USUÁRIO
+   USUARIO.USU_NOME 		         := '';		// NOME DO FUNCIONÁRIO
+   USUARIO.SENHA_SENHA 		       := '';	  // SENHA PARA ACESSO AO SISTEMA
+   USUARIO.SENHA_SKIN 			     := '';	  // SKIN
+   USUARIO.SENHA_CORCAMPOS  		 := 0;		// COR DE CAMPO
+end;
+
+procedure TdtmSisGestao.Grava_Dados_Iniciais;
+begin
+     if scnSisGestao.InTransaction then
+        scnSisGestao.Commit(tdSisGestao);
+     scnSisGestao.StartTransaction(tdSisGestao);
+     // Verifica se tem empresa ZERO cadastrada - empresa de suporte...
+     cdsGeralDados.Active := False;
+     cdsGeralDados.CommandText := '';
+     cdsGeralDados.CommandText := LowerCase('select * from geral_empresa where empre_codigo = 0');
+     cdsGeralDados.Active := True;
+     if (cdsGeralDados.FieldByName('EMPRE_CODIGO').IsNull) then // Se não tem empresa cadastrada, cadastra a empresa de suporte....
+     begin
+          cdsGeralDados.Active := False;
+          cdsGeralDados.CommandText := '';
+          cdsGeralDados.CommandText := LowerCase(
+                  'insert into geral_empresa(empre_codigo,empre_razaosocial,'+
+                  'empre_nomefantasia,cidade_coddne) values(0,''suporte'',''suporte'',0)');
+          cdsGeralDados.Execute;
+     end;
+
+     // Verifica se tem usuario ZERO cadastrado - usuario de suporte...
+     cdsGeralDados.Active := False;
+     cdsGeralDados.CommandText := '';
+     cdsGeralDados.CommandText := LowerCase('select func_codigo,func_nome '+
+                                  'from geral_funcionario where (func_codigo = ''0'')');
+     Application.ProcessMessages;
+     cdsGeralDados.Active := True;
+     Application.ProcessMessages;
+     if (cdsGeralDados.FieldByName('FUNC_CODIGO').IsNull) then // Se não tem usuario cadastrado, cadastra o usuario de suporte....
+     begin
+          cdsGeralDados.Active := False;
+          cdsGeralDados.CommandText := '';
+          cdsGeralDados.CommandText := LowerCase(
+                'insert into geral_funcionario(func_codigo,empre_codigo,'+
+                'func_nome,func_sexo,func_sistema,cidade_coddne,func_nivel,'+
+                'func_senha,func_skin,func_corcampos,func_replica,func_tipo_usu,func_botoes)'+
+                'values(:func_codigo,:empre_codigo,:func_nome,:func_sexo,:func_sistema,:cidade_coddne,:func_nivel,'+
+                ':func_senha,:func_skin,:func_corcampos,:func_replica,:func_tipo_usu,:func_botoes)');
+          cdsgeraldados.params.parambyname('func_codigo').asstring := '0';
+          cdsgeraldados.params.parambyname('empre_codigo').asinteger := 0;
+          cdsgeraldados.params.parambyname('func_nome').asstring := 'suporte';
+          cdsgeraldados.params.parambyname('func_sexo').asstring := '0';
+          cdsgeraldados.params.parambyname('func_sistema').asstring := '0';
+          cdsgeraldados.params.parambyname('cidade_coddne').asstring := '0';
+          cdsgeraldados.params.parambyname('func_senha').asstring := encripta('1');
+          cdsgeraldados.params.parambyname('func_skin').asstring := 'macos.skn';
+          cdsgeraldados.params.parambyname('func_nivel').asstring := 'S';
+          cdsgeraldados.params.parambyname('func_corcampos').asinteger := clskyblue;
+          cdsgeraldados.params.parambyname('func_replica').AsString := '0';
+          cdsgeraldados.params.parambyname('func_tipo_usu').AsString :='A';
+          cdsgeraldados.params.parambyname('func_botoes').AsString :='D';
+
+          cdsGeralDados.Execute;
+         { cdsGeralDados.Active := False;
+          cdsGeralDados.CommandText := '';
+          cdsGeralDados.CommandText := LowerCase(
+                'INSERT INTO GERAL_FUNCIONARIO_SENHA(FUNC_CODIGO,EMPRE_CODIGO,'+
+                'SENHA_SENHA,SENHA_SKIN,SENHA_NIVEL,SENHA_CORCAMPOS) '+
+                'VALUES(:FUNCCODIGO,:EMPRECODIGO,:SENHASENHA,:SENHASKIN,'+
+                ':SENHANIVEL,:SENHACORCAMPOS)');
+          cdsGeralDados.Params.ParamByName('FUNCCODIGO').AsString := '0';
+          cdsGeralDados.Params.ParamByName('EMPRECODIGO').AsInteger := 0;
+          cdsGeralDados.Params.ParamByName('SENHASENHA').AsString := Encripta('1');
+          cdsGeralDados.Params.ParamByName('SENHASKIN').AsString := 'macos.skn';
+          cdsGeralDados.Params.ParamByName('SENHANIVEL').AsString := '5';
+          cdsGeralDados.Params.ParamByName('SENHACORCAMPOS').AsInteger := clSkyBlue;
+          cdsGeralDados.Execute; }
+
+     end;
+     // Cadastra os acessos para o usuario de SUPORTE...
+     cdsGeral.Active := False;
+     cdsGeral.CommandText := '';
+     cdsgeral.commandtext := lowercase('insert into geral_acesso(func_codigo,empre_codigo,menu_codigo,acesso_nivel) '+
+                                       'values(:func_codigo,:empre_codigo,:menu_codigo,:acesso_nivel)'+
+                                       'on duplicate key update   func_codigo   = :func_codigo, '+
+                                       '                          empre_codigo  = :empre_codigo, '+
+                                       '                          menu_codigo   = :menu_codigo, '+
+                                       '                          acesso_nivel  = :acesso_nivel ');
+     cdsGeralDados.Active := False;
+     Application.ProcessMessages;
+     cdsGeralDados.CommandText := '';
+     cdsGeralDados.CommandText := LowerCase('select * from geral_menu');
+     Application.ProcessMessages;
+     cdsGeralDados.Active := True;
+     while not cdsGeralDados.Eof do
+     begin
+          cdsGeral.Active := False;
+          cdsGeral.Params.ParamByName('FUNC_CODIGO').AsString := '0';
+          cdsGeral.Params.ParamByName('EMPRE_CODIGO').AsString := '0';
+          cdsGeral.Params.ParamByName('ACESSO_NIVEL').AsString := 'S';
+          cdsGeral.Params.ParamByName('MENU_CODIGO').AsString := cdsGeralDados.FieldByName('MENU_CODIGO').AsString;
+          try
+             cdsGeral.Execute;
+          except
+          end;
+          cdsGeralDados.Next;
+     end;
+     scnSisGestao.Commit(tdSisGestao);
+end;
+
+procedure TdtmSisGestao.Le_Dados_INI;
+var
+   i : Integer;
+BEGIN
+     //Le dados do arquivo INI...
+     tfArquivoIni                  := TIniFile.Create(sCaminhoIni);
+     ARQUIVOINI.CAMINHOBASE        := tfArquivoIni.ReadString('SISINDUSTRIA','CaminhoBase','X');
+     ARQUIVOINI.SERVIDOR           := tfArquivoIni.ReadString('SISINDUSTRIA','Servidor','X');
+     ARQUIVOINI.CORFUNDO           := tfArquivoIni.ReadInteger('SISINDUSTRIA','CorFundo',0);
+     ARQUIVOINI.USUARIO            := 'teste';
+     ARQUIVOINI.SENHA              := 'teste';
+     //ARQUIVOINI.USUARIO            := Decripta_Email(Trim(tfArquivoIni.ReadString('SISOBRA','usuario','X')));
+     //ARQUIVOINI.SENHA              := Decripta_Email(trim(tfArquivoIni.ReadString('SISOBRA','senha','X')));
+     ARQUIVOINI.SISGESTAOSERVIDOR  := tfArquivoIni.ReadString('SISINDUSTRIA','SISGESTAOServidor','X');
+     //ARQUIVOINI.USUARIO            := tfArquivoIni.ReadString('SISINDUSTRIA','usuario','X');
+     //ARQUIVOINI.USUARIO            := Decripta_Email(ARQUIVOINI.USUARIO);
+     //ARQUIVOINI.SENHA              := tfArquivoIni.ReadString('SISINDUSTRIA','senha','X');
+     //ARQUIVOINI.SENHA              := Decripta_Email(ARQUIVOINI.SENHA);
+     ARQUIVOINI.EXESERVIDOR        := tfArquivoIni.ReadString('SISINDUSTRIA','ExeServidor','X');
+end;
+
+procedure TdtmSISGESTAO.Escreve_Dados_INI;
+begin
+     tfArquivoIni.WriteString('SISINDUSTRIA','Servidor',ARQUIVOINI.SERVIDOR);
+     tfArquivoIni.WriteString('SISINDUSTRIA','CaminhoBase',ARQUIVOINI.CAMINHOBASE);
+     tfArquivoIni.WriteInteger('SISINDUSTRIA','CorFundo',ARQUIVOINI.CORFUNDO);
+     tfArquivoIni.WriteString('SISINDUSTRIA','usuario',Encripta_Email(ARQUIVOINI.USUARIO));
+     tfArquivoIni.WriteString('SISINDUSTRIA','senha',Encripta_Email(ARQUIVOINI.SENHA));
+     tfArquivoIni.WriteString('SISINDUSTRIA','SISGESTAOServidor',ARQUIVOINI.SISGESTAOSERVIDOR);
+     tfArquivoIni.WriteString('SISINDUSTRIA','ExeServidor',ARQUIVOINI.EXESERVIDOR);
+     ifArquivo.Free;
+end;
+
+procedure TdtmSISGESTAO.ConectaMysqlGestao;
+begin
+     scnSISgestao.Connected := False;
+     scnSISgestao.Params.Clear;
+     scnSISgestao.Params.Values['HostName']  := AllTrim(ARQUIVOINI.SISGESTAOSERVIDOR);
+     scnSISgestao.Params.Values['Database']  := Trim(ARQUIVOINI.CAMINHOBASE);
+     scnSISgestao.Params.Values['User_Name'] := Trim(ARQUIVOINI.USUARIO);
+     scnSISgestao.Params.Values['Password']  := AllTrim(ARQUIVOINI.SENHA);
+     {try
+        scnSISGESTAO.Connected := True;
+     except
+     end;}
+     scnSISGESTAO.Connected := True;
+end;
+
+procedure TdtmSISGESTAO.DataModuleCreate(Sender: TObject);
+var
+   i : Integer;
+   scaminho : String;
+begin
+     //ShortDateFormat := 'dd/mm/yyyy';
+     //ShortTimeFormat := 'hh:mm';
+     //TimeAMString := '';
+     //TimePMString := '';
+     // Seta a variavel de controle da transação....
+     tdSISgestao.TransactionID  := 1;
+     tdSISgestao.IsolationLevel := xilREADCOMMITTED;
+     // Procura o Config um diretório acima......
+     sCaminhoExe := ExtractFileDir(Application.ExeName);
+     sArquivoSobre := sCaminhoExe;
+     sCaminhoSkin := sCaminhoExe+'\Skins';
+     sCaminhoIni   := sCaminhoExe+'\SisIndustria.INI';
+     // Se nao existe, cria com parametros padroes...
+     if not FileExists(sCaminhoIni) then
+     begin
+        Informacao('Configurar SisIndustria.ini','Atenção');
+     end
+     else
+     begin // Existe arquivo, nao existe secao...
+          tfArquivoIni := TIniFile.Create(sCaminhoIni);
+          ARQUIVOINI.CAMINHOBASE := tfArquivoIni.ReadString('SISINDUSTRIA','CaminhoBase','NAOEXISTESECAO');
+          if ARQUIVOINI.CAMINHOBASE = 'NAOEXISTESECAO' then
+             Escreve_Dados_INI;
+          tfArquivoIni.Free;
+     end;
+     LE_Dados_INI;
+     tfArquivoIni.Free;
+     ConectaMysqlGestao;
+end;
+
+procedure TdtmSISGESTAO.ApplicationEvents1Exception(Sender: TObject;
+  E: Exception);
+begin
+     Informacao('Aconteceu um erro e a mensagem de erro é : '+E.Message,'*** ATENÇÃO ***')
+end;
+
+procedure TdtmSISGESTAO.Preenche_Type_Usuario;
+begin
+     // Seleciona o usuario escolhido....
+     if dtmSisgestao.scnSISgestao.InTransaction then
+        dtmSisgestao.scnSISgestao.Commit(tdSISgestao);
+     dtmSisgestao.scnSISgestao.StartTransaction(tdSISgestao);
+     dtmSisgestao.cdsGeralDados.Active := False;
+     dtmSisgestao.cdsGeralDados.CommandText := '';
+     dtmSisgestao.cdsGeralDados.CommandText := 'select * from usuarios where usu_codigo  = :usucodigo)';
+     dtmSisgestao.cdsGeralDados.Params.ParamByName('USUCODIGO').AsString   := USUARIO.USU_CODIGO;
+     dtmSisgestao.cdsGeralDados.Active := True;
+     if (dtmSisgestao.cdsGeralDados.FieldByName('USU_SENHA').IsNull) then
+        Exit;
+     //LIMPA AS VARIAVEIS ANTES DE PEGAR OS DADOS DO USUARIO
+
+     //Limpa_variavel(sPalavra);
+     // Passagem de dados para a estrutura de usuarios...
+     USUARIO.USU_CODIGO        := dtmSisgestao.cdsGeralDados.FieldByName('USU_CODIGO').AsString;
+     USUARIO.USU_NOME          := dtmSisgestao.cdsGeralDados.FieldByName('USU_NOME').AsString;
+     USUARIO.SENHA_SENHA       := trim(Decripta(dtmSisgestao.cdsGeralDados.FieldByName('USU_SENHA').AsString));
+     if dtmSisgestao.cdsGeralDados.FieldByName('USU_CORCAMPOS').IsNull then
+        USUARIO.SENHA_CORCAMPOS := clSkyBlue
+     else
+        USUARIO.SENHA_CORCAMPOS := dtmSisgestao.cdsGeralDados.FieldByName('USU_CORCAMPOS').AsInteger;
+     USUARIO.SENHA_SKIN := dtmSisgestao.cdsGeralDados.FieldByName('USU_SKIN').AsString;
+     if dtmSisgestao.cdsGeralDados.FieldByName('USU_SKIN').IsNull then
+        USUARIO.SENHA_SKIN := 'macos.skn';
+     //
+     Application.ProcessMessages;
+     dtmSisgestao.scnSISgestao.Commit(tdSISgestao);
+end;
+
+end.
+

@@ -1,0 +1,4 @@
+﻿
+
+update geral_produtos set prod_atv = 4 where prod_grupo in (4,12,1,9,14,16)
+update geral_produtos set prod_atv = 1 where prod_grupo in (2,20,5)

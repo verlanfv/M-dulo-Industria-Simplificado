@@ -1,0 +1,2121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<namespace name="uDtmSisGestao">
+  <class name="TdtmSisGestao">
+    <ancestor name="TDataModule" namespace="Classes">
+      <methodref name="ReadHeight" visibility="private">
+      </methodref>
+      <methodref name="ReadHorizontalOffset" visibility="private">
+      </methodref>
+      <methodref name="ReadVerticalOffset" visibility="private">
+      </methodref>
+      <methodref name="ReadWidth" visibility="private">
+      </methodref>
+      <methodref name="WriteWidth" visibility="private">
+      </methodref>
+      <methodref name="WriteHorizontalOffset" visibility="private">
+      </methodref>
+      <methodref name="WriteVerticalOffset" visibility="private">
+      </methodref>
+      <methodref name="WriteHeight" visibility="private">
+      </methodref>
+      <methodref name="DoCreate" visibility="protected">
+      </methodref>
+      <methodref name="DoDestroy" visibility="protected">
+      </methodref>
+      <methodref name="DefineProperties" visibility="protected">
+      </methodref>
+      <methodref name="GetChildren" visibility="protected">
+      </methodref>
+      <methodref name="HandleCreateException" visibility="protected">
+      </methodref>
+      <methodref name="ReadState" visibility="protected">
+      </methodref>
+      <methodref name="Create" visibility="public">
+      </methodref>
+      <methodref name="CreateNew" visibility="public">
+      </methodref>
+      <methodref name="Destroy" visibility="public">
+      </methodref>
+      <methodref name="AfterConstruction" visibility="public">
+      </methodref>
+      <methodref name="BeforeDestruction" visibility="public">
+      </methodref>
+      <propertyref name="DesignOffset" visibility="public">
+      </propertyref>
+      <propertyref name="DesignSize" visibility="public">
+      </propertyref>
+      <propertyref name="OldCreateOrder" visibility="published">
+      </propertyref>
+      <eventref name="OnCreate" visibility="published">
+      </eventref>
+      <eventref name="OnDestroy" visibility="published">
+      </eventref>
+      <ancestor name="TComponent" namespace="Classes">
+        <methodref name="GetComObject" visibility="private">
+        </methodref>
+        <methodref name="GetComponent" visibility="private">
+        </methodref>
+        <methodref name="GetComponentCount" visibility="private">
+        </methodref>
+        <methodref name="GetComponentIndex" visibility="private">
+        </methodref>
+        <methodref name="Insert" visibility="private">
+        </methodref>
+        <methodref name="ReadLeft" visibility="private">
+        </methodref>
+        <methodref name="ReadTop" visibility="private">
+        </methodref>
+        <methodref name="Remove" visibility="private">
+        </methodref>
+        <methodref name="RemoveNotification" visibility="private">
+        </methodref>
+        <methodref name="SetComponentIndex" visibility="private">
+        </methodref>
+        <methodref name="SetReference" visibility="private">
+        </methodref>
+        <methodref name="WriteLeft" visibility="private">
+        </methodref>
+        <methodref name="WriteTop" visibility="private">
+        </methodref>
+        <methodref name="IntfGetComponent" visibility="private">
+        </methodref>
+        <methodref name="ChangeName" visibility="protected">
+        </methodref>
+        <methodref name="DefineProperties" visibility="protected">
+        </methodref>
+        <methodref name="GetChildren" visibility="protected">
+        </methodref>
+        <methodref name="GetChildOwner" visibility="protected">
+        </methodref>
+        <methodref name="GetChildParent" visibility="protected">
+        </methodref>
+        <methodref name="GetOwner" visibility="protected">
+        </methodref>
+        <methodref name="Loaded" visibility="protected">
+        </methodref>
+        <methodref name="Notification" visibility="protected">
+        </methodref>
+        <methodref name="PaletteCreated" visibility="protected">
+        </methodref>
+        <methodref name="ReadState" visibility="protected">
+        </methodref>
+        <methodref name="SetAncestor" visibility="protected">
+        </methodref>
+        <methodref name="SetDesigning" visibility="protected">
+        </methodref>
+        <methodref name="SetInline" visibility="protected">
+        </methodref>
+        <methodref name="SetDesignInstance" visibility="protected">
+        </methodref>
+        <methodref name="SetName" visibility="protected">
+        </methodref>
+        <methodref name="SetChildOrder" visibility="protected">
+        </methodref>
+        <methodref name="SetParentComponent" visibility="protected">
+        </methodref>
+        <methodref name="Updating" visibility="protected">
+        </methodref>
+        <methodref name="Updated" visibility="protected">
+        </methodref>
+        <methodref name="UpdateRegistry" visibility="protected">
+        </methodref>
+        <methodref name="ValidateRename" visibility="protected">
+        </methodref>
+        <methodref name="ValidateContainer" visibility="protected">
+        </methodref>
+        <methodref name="ValidateInsert" visibility="protected">
+        </methodref>
+        <methodref name="WriteState" visibility="protected">
+        </methodref>
+        <methodref name="QueryInterface" visibility="protected">
+        </methodref>
+        <methodref name="_AddRef" visibility="protected">
+        </methodref>
+        <methodref name="_Release" visibility="protected">
+        </methodref>
+        <methodref name="GetTypeInfoCount" visibility="protected">
+        </methodref>
+        <methodref name="GetTypeInfo" visibility="protected">
+        </methodref>
+        <methodref name="GetIDsOfNames" visibility="protected">
+        </methodref>
+        <methodref name="Invoke" visibility="protected">
+        </methodref>
+        <methodref name="Create" visibility="public">
+        </methodref>
+        <methodref name="Destroy" visibility="public">
+        </methodref>
+        <methodref name="BeforeDestruction" visibility="public">
+        </methodref>
+        <methodref name="DestroyComponents" visibility="public">
+        </methodref>
+        <methodref name="Destroying" visibility="public">
+        </methodref>
+        <methodref name="ExecuteAction" visibility="public">
+        </methodref>
+        <methodref name="FindComponent" visibility="public">
+        </methodref>
+        <methodref name="FreeNotification" visibility="public">
+        </methodref>
+        <methodref name="RemoveFreeNotification" visibility="public">
+        </methodref>
+        <methodref name="FreeOnRelease" visibility="public">
+        </methodref>
+        <methodref name="GetEnumerator" visibility="public">
+        </methodref>
+        <methodref name="GetParentComponent" visibility="public">
+        </methodref>
+        <methodref name="GetNamePath" visibility="public">
+        </methodref>
+        <methodref name="HasParent" visibility="public">
+        </methodref>
+        <methodref name="InsertComponent" visibility="public">
+        </methodref>
+        <methodref name="RemoveComponent" visibility="public">
+        </methodref>
+        <methodref name="SetSubComponent" visibility="public">
+        </methodref>
+        <methodref name="SafeCallException" visibility="public">
+        </methodref>
+        <methodref name="UpdateAction" visibility="public">
+        </methodref>
+        <methodref name="IsImplementorOf" visibility="public">
+        </methodref>
+        <methodref name="ReferenceInterface" visibility="public">
+        </methodref>
+        <propertyref name="ComObject" visibility="public">
+        </propertyref>
+        <propertyref name="Components" visibility="public">
+        </propertyref>
+        <propertyref name="ComponentCount" visibility="public">
+        </propertyref>
+        <propertyref name="ComponentIndex" visibility="public">
+        </propertyref>
+        <propertyref name="ComponentState" visibility="public">
+        </propertyref>
+        <propertyref name="ComponentStyle" visibility="public">
+        </propertyref>
+        <propertyref name="DesignInfo" visibility="public">
+        </propertyref>
+        <propertyref name="Owner" visibility="public">
+        </propertyref>
+        <propertyref name="VCLComObject" visibility="public">
+        </propertyref>
+        <propertyref name="Name" visibility="published">
+        </propertyref>
+        <propertyref name="Tag" visibility="published">
+        </propertyref>
+        <ancestor name="TPersistent" namespace="Classes">
+          <methodref name="AssignError" visibility="private">
+          </methodref>
+          <methodref name="AssignTo" visibility="protected">
+          </methodref>
+          <methodref name="DefineProperties" visibility="protected">
+          </methodref>
+          <methodref name="GetOwner" visibility="protected">
+          </methodref>
+          <methodref name="Destroy" visibility="public">
+          </methodref>
+          <methodref name="Assign" visibility="public">
+          </methodref>
+          <methodref name="GetNamePath" visibility="public">
+          </methodref>
+          <ancestor name="TObject" namespace="System">
+            <methodref name="Create" visibility="public">
+            </methodref>
+            <methodref name="Free" visibility="public">
+            </methodref>
+            <methodref name="InitInstance" visibility="public">
+            </methodref>
+            <methodref name="CleanupInstance" visibility="public">
+            </methodref>
+            <methodref name="ClassType" visibility="public">
+            </methodref>
+            <methodref name="ClassName" visibility="public">
+            </methodref>
+            <methodref name="ClassNameIs" visibility="public">
+            </methodref>
+            <methodref name="ClassParent" visibility="public">
+            </methodref>
+            <methodref name="ClassInfo" visibility="public">
+            </methodref>
+            <methodref name="InstanceSize" visibility="public">
+            </methodref>
+            <methodref name="InheritsFrom" visibility="public">
+            </methodref>
+            <methodref name="MethodAddress" visibility="public">
+            </methodref>
+            <methodref name="MethodName" visibility="public">
+            </methodref>
+            <methodref name="FieldAddress" visibility="public">
+            </methodref>
+            <methodref name="GetInterface" visibility="public">
+            </methodref>
+            <methodref name="GetInterfaceEntry" visibility="public">
+            </methodref>
+            <methodref name="GetInterfaceTable" visibility="public">
+            </methodref>
+            <methodref name="SafeCallException" visibility="public">
+            </methodref>
+            <methodref name="AfterConstruction" visibility="public">
+            </methodref>
+            <methodref name="BeforeDestruction" visibility="public">
+            </methodref>
+            <methodref name="Dispatch" visibility="public">
+            </methodref>
+            <methodref name="DefaultHandler" visibility="public">
+            </methodref>
+            <methodref name="NewInstance" visibility="public">
+            </methodref>
+            <methodref name="FreeInstance" visibility="public">
+            </methodref>
+            <methodref name="Destroy" visibility="public">
+            </methodref>
+          </ancestor>
+        </ancestor>
+      </ancestor>
+    </ancestor>
+    <members>
+      <field name="cdsGeralDados" type="TClientDataSet" visibility="published" />
+      <field name="scnSisGestao" type="TSQLConnection" visibility="published" />
+      <field name="dspSisGestao" type="TDataSetProvider" visibility="published" />
+      <field name="qryGeralDados" type="TSQLQuery" visibility="published" />
+      <field name="lcnSisGestao" type="TLocalConnection" visibility="published" />
+      <field name="cdsConsulta" type="TClientDataSet" visibility="published" />
+      <field name="cdsGeral" type="TClientDataSet" visibility="published" />
+      <field name="dtsConsulta" type="TDataSource" visibility="published" />
+      <field name="cdsDevedor" type="TClientDataSet" visibility="published" />
+      <field name="cdsDevedorDiasDevedor" type="TIntegerField" visibility="published" />
+      <field name="cdsDevedorCodigo" type="TIntegerField" visibility="published" />
+      <field name="cdsDevedorNome" type="TStringField" visibility="published" />
+      <field name="cdsDevedorSaldoDevedor" type="TFloatField" visibility="published" />
+      <field name="dtsDevedor" type="TDataSource" visibility="published" />
+      <field name="pplRelDevedor" type="TppDBPipeline" visibility="published" />
+      <field name="pprRelDevedor" type="TppReport" visibility="published" />
+      <field name="ppHeaderBand1" type="TppHeaderBand" visibility="published" />
+      <field name="ppLabel2" type="TppLabel" visibility="published" />
+      <field name="ppLabel3" type="TppLabel" visibility="published" />
+      <field name="ppLine1" type="TppLine" visibility="published" />
+      <field name="ppSystemVariable5" type="TppSystemVariable" visibility="published" />
+      <field name="ppShape354" type="TppShape" visibility="published" />
+      <field name="lblFiltro" type="TppLabel" visibility="published" />
+      <field name="ppLabel457" type="TppLabel" visibility="published" />
+      <field name="ppSystemVariable4" type="TppSystemVariable" visibility="published" />
+      <field name="lblNomeouRazaoRelatorio" type="TppLabel" visibility="published" />
+      <field name="ppSystemVariable1" type="TppSystemVariable" visibility="published" />
+      <field name="imgLogoRel" type="TppImage" visibility="published" />
+      <field name="ppLabel1" type="TppLabel" visibility="published" />
+      <field name="ppLabel5" type="TppLabel" visibility="published" />
+      <field name="ppDetailBand1" type="TppDetailBand" visibility="published" />
+      <field name="ppDBText1" type="TppDBText" visibility="published" />
+      <field name="ppDBText2" type="TppDBText" visibility="published" />
+      <field name="ppDBText3" type="TppDBText" visibility="published" />
+      <field name="ppDBText5" type="TppDBText" visibility="published" />
+      <field name="ppFooterBand1" type="TppFooterBand" visibility="published" />
+      <field name="ppSummaryBand1" type="TppSummaryBand" visibility="published" />
+      <field name="ppLine85" type="TppLine" visibility="published" />
+      <field name="ppDBCalc1" type="TppDBCalc" visibility="published" />
+      <field name="ppDBCalc2" type="TppDBCalc" visibility="published" />
+      <field name="ppPageStyle1" type="TppPageStyle" visibility="published" />
+      <field name="cdsDevedorTelefone" type="TStringField" visibility="published" />
+      <field name="ppLabel4" type="TppLabel" visibility="published" />
+      <field name="ppDBText4" type="TppDBText" visibility="published" />
+      <field name="cdsDevedorEmpresa" type="TIntegerField" visibility="published" />
+      <field name="ppLabel6" type="TppLabel" visibility="published" />
+      <field name="ppDBText6" type="TppDBText" visibility="published" />
+      <procedure name="ApplicationEvents1Exception" visibility="published">
+        <parameters>
+          <parameter name="Sender" type="TObject" />
+          <parameter name="E" type="Exception" />
+        </parameters>
+      </procedure>
+      <procedure name="dspSisGestaoAfterApplyUpdates" visibility="published">
+        <parameters>
+          <parameter name="Sender" type="TObject" />
+          <parameter name="OwnerData" type="OleVariant" paramflags="var" />
+        </parameters>
+      </procedure>
+      <procedure name="DataModuleCreate" visibility="published">
+        <parameters>
+          <parameter name="Sender" type="TObject" />
+        </parameters>
+      </procedure>
+      <procedure name="Le_Dados_Configuracao" visibility="published">
+      </procedure>
+      <procedure name="Grava_Dados_Iniciais" visibility="published">
+      </procedure>
+      <procedure name="Escreve_Dados_INI" visibility="published">
+      </procedure>
+      <procedure name="Le_Dados_INI" visibility="published">
+      </procedure>
+      <procedure name="ConectaMysqlGestao" visibility="published">
+      </procedure>
+      <procedure name="ConectaFireBirdGestao" visibility="published">
+      </procedure>
+      <procedure name="Verifica_Pastas" visibility="published">
+      </procedure>
+      <procedure name="Verifica_Usuarios_Logados" visibility="published">
+        <parameters>
+          <parameter name="pRetorno" type="string" paramflags="var" />
+        </parameters>
+      </procedure>
+      <procedure name="Gravar_Auditoria" visibility="published">
+      </procedure>
+      <function name="Carrega_Config_Geral" visibility="published">
+        <parameters>
+          <retval type="Boolean" />
+        </parameters>
+      </function>
+      <procedure name="iniEcf" visibility="published">
+      </procedure>
+      <procedure name="Flexdocs_Versao" visibility="published">
+      </procedure>
+      <procedure name="Preenche_Type_Usuario" visibility="published">
+      </procedure>
+      <procedure name="CarregaGeral_Nfe" visibility="published">
+        <parameters>
+          <parameter name="Sender" type="TObject" />
+        </parameters>
+      </procedure>
+      <procedure name="CarregaEmpresaEspecifica" visibility="published">
+      </procedure>
+      <field name="bPrimeiravez" type="Boolean" visibility="public" />
+      <field name="bExisteNFCe" type="Boolean" visibility="public" />
+      <field name="bExisteNFe" type="Boolean" visibility="public" />
+      <field name="bDiretorio" type="Boolean" visibility="public" />
+      <field name="bRetSefaz" type="Boolean" visibility="public" />
+      <field name="bLancouNF" type="Boolean" visibility="public" />
+      <field name="bNFeAutomatica" type="Boolean" visibility="public" />
+      <field name="sVersaoNFe" type="string" visibility="public" />
+      <field name="sVersaoDLL" type="string" visibility="public" />
+      <field name="sSistema" type="string" visibility="public" />
+      <field name="sModeloLogin" type="string" visibility="public" />
+      <field name="sRetornoLogado" type="string" visibility="public" />
+      <field name="sCaminhoLogin" type="string" visibility="public" />
+      <field name="svisualizar" type="string" visibility="public" />
+      <field name="sPalavra" type="string" visibility="public" />
+      <field name="gsRetEmpresa" type="string" visibility="public" />
+      <field name="gsRetSerie" type="string" visibility="public" />
+      <field name="gsRetNFe" type="string" visibility="public" />
+      <field name="gsRetPedido" type="string" visibility="public" />
+      <field name="gsRetRota" type="string" visibility="public" />
+      <field name="gsRetDataEmissao" type="string" visibility="public" />
+      <field name="gsRetCfop" type="string" visibility="public" />
+      <field name="gsRetProtocolo" type="string" visibility="public" />
+      <field name="gsRetChaveAcesso" type="string" visibility="public" />
+      <field name="gsRetCliente" type="string" visibility="public" />
+      <field name="gsRetErro" type="string" visibility="public" />
+      <field name="gsSituacao" type="string" visibility="public" />
+      <field name="gsRetVariavel" type="string" visibility="public" />
+      <field name="gsRetModelo" type="string" visibility="public" />
+    </members>
+  </class>
+  <struct name="RLINHAPARCELA">
+    <field name="indice" type="string" visibility="public" />
+    <field name="data" type="string" visibility="public" />
+    <field name="valor" type="string" visibility="public" />
+  </struct>
+  <struct name="RECF">
+    <field name="ecf_empresa" type="string" visibility="public" />
+    <field name="ecf_modelo" type="string" visibility="public" />
+    <field name="ecf_serie" type="string" visibility="public" />
+    <field name="ecf_cupom_serie" type="string" visibility="public" />
+    <field name="ecf_portaserial" type="string" visibility="public" />
+    <field name="ecf_terminal" type="string" visibility="public" />
+    <field name="ecf_gaveta" type="string" visibility="public" />
+    <field name="caminho_logo" type="string" visibility="public" />
+  </struct>
+  <struct name="RLINHADIGITACAO">
+    <field name="indice" type="string" visibility="public" />
+    <field name="situacao" type="string" visibility="public" />
+    <field name="quantidade" type="string" visibility="public" />
+    <field name="barras" type="string" visibility="public" />
+    <field name="tabela" type="string" visibility="public" />
+    <field name="precounidade" type="string" visibility="public" />
+    <field name="valordesconto" type="string" visibility="public" />
+    <field name="percentualdesconto" type="string" visibility="public" />
+    <field name="descricaoproduto" type="string" visibility="public" />
+    <field name="unidadevenda" type="string" visibility="public" />
+    <field name="aliquota" type="string" visibility="public" />
+    <field name="prctipo" type="string" visibility="public" />
+    <field name="tipoqtd" type="string" visibility="public" />
+    <field name="totalitem" type="string" visibility="public" />
+    <field name="tipodesconto" type="string" visibility="public" />
+  </struct>
+  <struct name="RCONFIGURAECF">
+    <field name="ecf_empresa" type="string" visibility="public" />
+    <field name="ecf_codigo" type="string" visibility="public" />
+    <field name="ecf_fornecedor" type="string" visibility="public" />
+    <field name="ecf_marca" type="string" visibility="public" />
+    <field name="ecf_dll_versao" type="string" visibility="public" />
+    <field name="ecf_modelo" type="string" visibility="public" />
+    <field name="ecf_serie" type="string" visibility="public" />
+    <field name="ecf_data" type="string" visibility="public" />
+    <field name="ecf_situacao" type="string" visibility="public" />
+    <field name="ecf_obs" type="WideString" visibility="public" />
+    <field name="ecf_mens_promo" type="string" visibility="public" />
+    <field name="ecf_m_dsc_item" type="string" visibility="public" />
+    <field name="ecf_m_acr_sub" type="string" visibility="public" />
+    <field name="ecf_m_dsc_sub" type="string" visibility="public" />
+    <field name="ecf_m_can_item" type="string" visibility="public" />
+    <field name="ecf_m_can_dsc_item" type="string" visibility="public" />
+    <field name="ecf_cliente_default" type="string" visibility="public" />
+    <field name="ecf_natureza_default" type="string" visibility="public" />
+    <field name="ecf_gaveta" type="string" visibility="public" />
+    <field name="ecf_dsc_item" type="string" visibility="public" />
+    <field name="ecf_acr_subtotal" type="string" visibility="public" />
+    <field name="ecf_dsc_Subtotal" type="string" visibility="public" />
+    <field name="ecf_qtd_item" type="string" visibility="public" />
+    <field name="ecf_tab_prc" type="string" visibility="public" />
+    <field name="ecf_tipo_qtd" type="string" visibility="public" />
+    <field name="ecf_tipo_desc" type="string" visibility="public" />
+    <field name="ecf_decimais" type="string" visibility="public" />
+    <field name="ecf_repre" type="string" visibility="public" />
+    <field name="ecf_tab" type="string" visibility="public" />
+  </struct>
+  <struct name="RGERALNOTA">
+    <field name="EMPRE_CODIGO" type="Integer" visibility="public" />
+    <field name="NOTA_NUMERO" type="Integer" visibility="public" />
+    <field name="NOTA_SERIE" type="string" visibility="public" />
+    <field name="NOTA_MODELO" type="string" visibility="public" />
+    <field name="NOTA_CHAVE" type="string" visibility="public" />
+    <field name="CLI_CODIGO" type="Integer" visibility="public" />
+    <field name="NOTA_DT_EMISSAO" type="string" visibility="public" />
+    <field name="NOTA_CFOP" type="string" visibility="public" />
+    <field name="NATU_CODIGO" type="string" visibility="public" />
+    <field name="NOTA_TIPO" type="string" visibility="public" />
+    <field name="NATU_NOME" type="string" visibility="public" />
+    <field name="CLI_NOME" type="string" visibility="public" />
+    <field name="CLI_CNPJCPF" type="string" visibility="public" />
+    <field name="CLI_IE" type="string" visibility="public" />
+    <field name="SITUACAO_CODIGO_FIN" type="string" visibility="public" />
+    <field name="CLI_TIPOPESSOA" type="string" visibility="public" />
+    <field name="REPRE_CODIGO" type="string" visibility="public" />
+    <field name="PRECO_TABELA" type="string" visibility="public" />
+    <field name="SITUACAO_CODIGO_NOTA" type="string" visibility="public" />
+    <field name="NOTA_DT_SAIDA" type="string" visibility="public" />
+    <field name="NOTA_DT_PEDIDO" type="string" visibility="public" />
+    <field name="COND_CODIGO" type="string" visibility="public" />
+    <field name="NOTA_COND_DTA_01" type="string" visibility="public" />
+    <field name="NOTA_COND_VLR_01" type="string" visibility="public" />
+    <field name="NOTA_COND_DTA_02" type="string" visibility="public" />
+    <field name="NOTA_COND_VLR_02" type="string" visibility="public" />
+    <field name="NOTA_COND_DTA_03" type="string" visibility="public" />
+    <field name="NOTA_COND_VLR_03" type="string" visibility="public" />
+    <field name="NOTA_COND_DTA_04" type="string" visibility="public" />
+    <field name="NOTA_COND_VLR_04" type="string" visibility="public" />
+    <field name="NOTA_COND_DTA_05" type="string" visibility="public" />
+    <field name="NOTA_COND_VLR_05" type="string" visibility="public" />
+    <field name="NOTA_COND_DTA_06" type="string" visibility="public" />
+    <field name="NOTA_COND_VLR_06" type="string" visibility="public" />
+    <field name="NOTA_COND_DTA_07" type="string" visibility="public" />
+    <field name="NOTA_COND_VLR_07" type="string" visibility="public" />
+    <field name="NOTA_COND_DTA_08" type="string" visibility="public" />
+    <field name="NOTA_COND_VLR_08" type="string" visibility="public" />
+    <field name="NOTA_COND_DTA_09" type="string" visibility="public" />
+    <field name="NOTA_COND_VLR_09" type="string" visibility="public" />
+    <field name="NOTA_COND_DTA_10" type="string" visibility="public" />
+    <field name="NOTA_COND_VLR_10" type="string" visibility="public" />
+    <field name="NOTA_COND_DTA_11" type="string" visibility="public" />
+    <field name="NOTA_COND_VLR_11" type="string" visibility="public" />
+    <field name="NOTA_COND_DTA_12" type="string" visibility="public" />
+    <field name="NOTA_COND_VLR_12" type="string" visibility="public" />
+    <field name="BANCO_CODIGO" type="string" visibility="public" />
+    <field name="NOTA_DESC_PERC" type="string" visibility="public" />
+    <field name="NOTA_DESC_VLR" type="string" visibility="public" />
+    <field name="NOTA_VALOR_PROD" type="string" visibility="public" />
+    <field name="NOTA_VALOR_NF" type="string" visibility="public" />
+    <field name="NOTA_ICM_VLR_TOT" type="string" visibility="public" />
+    <field name="NOTA_ICM_BASE1" type="string" visibility="public" />
+    <field name="NOTA_ICM_ALIQ1" type="string" visibility="public" />
+    <field name="NOTA_ICM_BASE2" type="string" visibility="public" />
+    <field name="NOTA_ICM_ALIQ2" type="string" visibility="public" />
+    <field name="NOTA_ICM_BASE3" type="string" visibility="public" />
+    <field name="NOTA_ICM_ALIQ3" type="string" visibility="public" />
+    <field name="NOTA_ICM_BASE4" type="string" visibility="public" />
+    <field name="NOTA_ICM_ALIQ4" type="string" visibility="public" />
+    <field name="NOTA_ICM_BASE5" type="string" visibility="public" />
+    <field name="NOTA_ICM_ALIQ5" type="string" visibility="public" />
+    <field name="NOTA_ICM_BASE6" type="string" visibility="public" />
+    <field name="NOTA_ICM_ALIQ6" type="string" visibility="public" />
+    <field name="NOTA_ICM_ISENTAS" type="string" visibility="public" />
+    <field name="NOTA_ICM_OUTRAS" type="string" visibility="public" />
+    <field name="NOTA_ST_VALOR" type="string" visibility="public" />
+    <field name="NOTA_PIS_BASE" type="string" visibility="public" />
+    <field name="NOTA_PIS_VALOR" type="string" visibility="public" />
+    <field name="NOTA_COFINS_BASE" type="string" visibility="public" />
+    <field name="NOTA_COFINS_VALOR" type="string" visibility="public" />
+    <field name="classificao_fiscal" type="string" visibility="public" />
+    <field name="NOTA_ISS_VALOR" type="string" visibility="public" />
+    <field name="NOTA_TERMINAL" type="string" visibility="public" />
+    <field name="NOTA_SITUACAO" type="string" visibility="public" />
+    <field name="NOTA_SITUACAO_NOTA" type="string" visibility="public" />
+  </struct>
+  <struct name="RGERALITEM">
+    <field name="EMPRE_CODIGO" type="string" visibility="public" />
+    <field name="NOTA_NUMERO" type="string" visibility="public" />
+    <field name="NOTA_SERIE" type="string" visibility="public" />
+    <field name="CLI_CODIGO" type="string" visibility="public" />
+    <field name="NOTA_DT_EMISSAO" type="string" visibility="public" />
+    <field name="NOTA_CFOP" type="string" visibility="public" />
+    <field name="ITENS_SEQ" type="string" visibility="public" />
+    <field name="NOTA_TERMINAL" type="string" visibility="public" />
+    <field name="PREVENDA" type="string" visibility="public" />
+    <field name="ITENS_MODELO" type="string" visibility="public" />
+    <field name="NOTA_HORA" type="string" visibility="public" />
+    <field name="PROD_CODIGO" type="string" visibility="public" />
+    <field name="ITENS_BARRAS" type="string" visibility="public" />
+    <field name="ITENS_REPRE" type="string" visibility="public" />
+    <field name="ITENS_UNIDADE" type="string" visibility="public" />
+    <field name="ITENS_QUANTIDADE" type="string" visibility="public" />
+    <field name="ITENS_CST" type="string" visibility="public" />
+    <field name="ITENS_DESC_PERC" type="string" visibility="public" />
+    <field name="ITENS_DESC2" type="string" visibility="public" />
+    <field name="ITENS_DESC3" type="string" visibility="public" />
+    <field name="ITENS_ACRES" type="string" visibility="public" />
+    <field name="ITENS_COD_ORIGEM" type="string" visibility="public" />
+    <field name="ITENS_PESO" type="string" visibility="public" />
+    <field name="ITENS_FAIXA" type="string" visibility="public" />
+    <field name="ITENS_DATA_FAB" type="string" visibility="public" />
+    <field name="ITENS_DATA_VAL" type="string" visibility="public" />
+    <field name="ITENS_PRECO_BRUTO" type="string" visibility="public" />
+    <field name="ITENS_PRECO_ST" type="string" visibility="public" />
+    <field name="ITENS_PRECO_CLIENTE" type="string" visibility="public" />
+    <field name="ITENS_PRECO_INT" type="string" visibility="public" />
+    <field name="ITENS_PMC" type="string" visibility="public" />
+    <field name="ITENS_PRECO_PROMOC" type="string" visibility="public" />
+    <field name="ITENS_QTDE_PROMOC" type="string" visibility="public" />
+    <field name="ITENS_COMIS_PERC" type="string" visibility="public" />
+    <field name="ITENS_COMIS_BASE" type="string" visibility="public" />
+    <field name="ITENS_CUST_CONTRIB" type="string" visibility="public" />
+    <field name="ITENS_CUST_COMPRA" type="string" visibility="public" />
+    <field name="ITENS_CUST_MEDIO" type="string" visibility="public" />
+    <field name="ITENS_LOTE_NR_01" type="string" visibility="public" />
+    <field name="ITENS_LOTE_QTD_01" type="string" visibility="public" />
+    <field name="ITENS_LOTE_NR_02" type="string" visibility="public" />
+    <field name="ITENS_LOTE_QTD_02" type="string" visibility="public" />
+    <field name="ITENS_LOTE_NR_03" type="string" visibility="public" />
+    <field name="ITENS_LOTE_QTD_03" type="string" visibility="public" />
+    <field name="ITENS_LOTE_NR_04" type="string" visibility="public" />
+    <field name="ITENS_LOTE_QTD_04" type="string" visibility="public" />
+    <field name="ITENS_LOTE_NR_05" type="string" visibility="public" />
+    <field name="ITENS_LOTE_QTD_05" type="string" visibility="public" />
+    <field name="ITENS_COD_MED" type="string" visibility="public" />
+    <field name="ITENS_COD_COMPRA" type="string" visibility="public" />
+    <field name="ITENS_RECEITA" type="string" visibility="public" />
+    <field name="MENSICMS_CODIGO" type="string" visibility="public" />
+    <field name="ITENS_TAB_ICMS" type="Integer" visibility="public" />
+    <field name="ITENS_ICM_BASE" type="string" visibility="public" />
+    <field name="ITENS_ICM_ALIQ" type="string" visibility="public" />
+    <field name="ITENS_ICM_VALOR" type="string" visibility="public" />
+    <field name="ITENS_RED_BASE" type="string" visibility="public" />
+    <field name="ITENS_RED_IS" type="string" visibility="public" />
+    <field name="ITENS_ICM_ISENTAS" type="string" visibility="public" />
+    <field name="ITENS_ICM_OUTRAS" type="string" visibility="public" />
+    <field name="ITENS_ALIQ_MVA" type="string" visibility="public" />
+    <field name="ITENS_ST_BASE" type="string" visibility="public" />
+    <field name="ITENS_ST_ALIQ" type="string" visibility="public" />
+    <field name="ITENS_ST_VALOR" type="string" visibility="public" />
+    <field name="ITENS_TAB_IPI" type="Integer" visibility="public" />
+    <field name="ITENS_ALIQ_IPI" type="string" visibility="public" />
+    <field name="ITENS_IPI_BASE" type="string" visibility="public" />
+    <field name="ITENS_IPI_VALOR" type="string" visibility="public" />
+    <field name="ITENS_TAB_PIS" type="Integer" visibility="public" />
+    <field name="ITENS_ALIQ_PIS" type="string" visibility="public" />
+    <field name="ITENS_PIS_BASE" type="string" visibility="public" />
+    <field name="ITENS_PIS_VALOR" type="string" visibility="public" />
+    <field name="ITENS_TAB_COFINS" type="Integer" visibility="public" />
+    <field name="ITENS_ALIQ_COFINS" type="string" visibility="public" />
+    <field name="ITENS_COFINS_BASE" type="string" visibility="public" />
+    <field name="ITENS_COFINS_VALOR" type="string" visibility="public" />
+    <field name="ITENS_FRETE" type="string" visibility="public" />
+    <field name="ITENS_DESCONTO" type="string" visibility="public" />
+    <field name="ITENS_ACRESCIMO" type="string" visibility="public" />
+    <field name="ITENS_IO" type="string" visibility="public" />
+    <field name="ITENS_S_ICM" type="string" visibility="public" />
+    <field name="ITENS_V_IC" type="string" visibility="public" />
+    <field name="ITENS_B_PC" type="string" visibility="public" />
+    <field name="ITENS_PROD_GRADE" type="string" visibility="public" />
+    <field name="ITENS_DESC_GRADE" type="string" visibility="public" />
+    <field name="ITENS_NCM" type="string" visibility="public" />
+    <field name="PROD_GRADE" type="string" visibility="public" />
+    <field name="ITENS_GRADE" type="string" visibility="public" />
+    <field name="ITENS_VALOR_IBTP" type="string" visibility="public" />
+    <field name="ITENS_SUB_TOTAL_CUPOM" type="string" visibility="public" />
+    <field name="ITENS_TOTAL_CUPOM" type="string" visibility="public" />
+    <field name="ITENS_TOTAL_DESCONTO_CUPOM" type="string" visibility="public" />
+    <field name="ITENS_PRECO_LIQUIDO" type="string" visibility="public" />
+    <field name="ITENS_TOTAL_DESCONTO" type="string" visibility="public" />
+    <field name="ITENS_VALOR_IMPOSTO" type="string" visibility="public" />
+    <field name="ITENS_ACRES_PERC" type="string" visibility="public" />
+    <field name="ITENS_SITUACAO" type="string" visibility="public" />
+    <field name="SITUACAO_FISCAL" type="string" visibility="public" />
+    <field name="ITENS_CSOSN" type="string" visibility="public" />
+  </struct>
+  <struct name="RGERALFORMAPAGAMENTO">
+    <field name="forma_pagamento_codigo" type="string" visibility="public" />
+    <field name="forma_pagamento_descricao" type="string" visibility="public" />
+    <field name="forma_pagamento_descricao_impressora" type="string" visibility="public" />
+    <field name="natu_codigo" type="string" visibility="public" />
+    <field name="banco_codigo" type="string" visibility="public" />
+  </struct>
+  <struct name="RGERAL_BANCO">
+    <field name="banco_codigo" type="string" visibility="public" />
+    <field name="banco_nome" type="string" visibility="public" />
+    <field name="banco_tipo" type="string" visibility="public" />
+    <field name="banco_diretorio" type="string" visibility="public" />
+    <field name="banco_diretorioret" type="string" visibility="public" />
+    <field name="banco_agencia" type="string" visibility="public" />
+    <field name="banco_contacorrente" type="string" visibility="public" />
+    <field name="banco_carteira" type="string" visibility="public" />
+    <field name="banco_aceite" type="string" visibility="public" />
+    <field name="banco_nrconvenio" type="string" visibility="public" />
+    <field name="banco_tarifa" type="string" visibility="public" />
+    <field name="banco_remessa" type="string" visibility="public" />
+    <field name="banco_mensagem" type="string" visibility="public" />
+    <field name="banco_lctocontab" type="string" visibility="public" />
+    <field name="banco_emp" type="string" visibility="public" />
+    <field name="banco_saldo" type="string" visibility="public" />
+    <field name="banco_cense" type="string" visibility="public" />
+    <field name="banco_cip" type="string" visibility="public" />
+    <field name="banco_posto" type="string" visibility="public" />
+    <field name="banco_cedente" type="string" visibility="public" />
+    <field name="banco_impfiscal" type="string" visibility="public" />
+  </struct>
+  <struct name="RGERAL_BANCO_PARCELADO">
+    <field name="banco_entrada" type="string" visibility="public" />
+    <field name="banco_codigo1" type="string" visibility="public" />
+    <field name="banco_codigo2" type="string" visibility="public" />
+    <field name="banco_codigo3" type="string" visibility="public" />
+    <field name="banco_codigo4" type="string" visibility="public" />
+    <field name="banco_codigo5" type="string" visibility="public" />
+    <field name="banco_codigo6" type="string" visibility="public" />
+    <field name="banco_codigo7" type="string" visibility="public" />
+    <field name="banco_codigo8" type="string" visibility="public" />
+    <field name="banco_codigo9" type="string" visibility="public" />
+    <field name="banco_codigo10" type="string" visibility="public" />
+    <field name="banco_codigo11" type="string" visibility="public" />
+    <field name="banco_codigo12" type="string" visibility="public" />
+  </struct>
+  <struct name="RGERALPRODUTOHISTORICO">
+    <field name="EMPRE_CODIGO" type="Integer" visibility="public" />
+    <field name="PROD_CODIGO" type="Integer" visibility="public" />
+    <field name="HISTP_QTD_ESTOQUE_ATUAL" type="Double" visibility="public" />
+    <field name="HISTP_QTD_ANTERIOR" type="Double" visibility="public" />
+    <field name="HISTP_QTD_ULTIMA_ENTRADA" type="string" visibility="public" />
+    <field name="HISTP_DATA_VALIDADE_PRECO" type="string" visibility="public" />
+    <field name="HISTP_DATA_ULTIMA_SAIDA" type="string" visibility="public" />
+    <field name="HISTP_DATA_ULTIMA_ENTRADA" type="string" visibility="public" />
+    <field name="HISTP_CUSTO_COMPRA" type="string" visibility="public" />
+    <field name="HISTP_CUSTO_INVENTARIO" type="string" visibility="public" />
+    <field name="HISTP_CUSTO_CONTRIBUICAO" type="string" visibility="public" />
+    <field name="HISTP_CUSTO_MEDIO" type="string" visibility="public" />
+    <field name="HISTP_CUSTO_MEDIO_INVENTARIO" type="string" visibility="public" />
+    <field name="HISTP_PRECO_COMPRA" type="string" visibility="public" />
+    <field name="HISTP_PRECO_COMPRA_LIQUIDO" type="string" visibility="public" />
+    <field name="HISTP_NR_LANCAMENTO" type="Integer" visibility="public" />
+    <field name="HISTP_SITUACAO" type="string" visibility="public" />
+    <field name="HISTP_SITUACAO_ANTERIOR" type="string" visibility="public" />
+  </struct>
+  <struct name="RGERALKARDEX">
+    <field name="EMPRE_CODIGO" type="Integer" visibility="public" />
+    <field name="PROD_CODIGO" type="Integer" visibility="public" />
+    <field name="KARD_LANCAMENTO" type="Integer" visibility="public" />
+    <field name="KARD_DATA" type="string" visibility="public" />
+    <field name="KARD_DOCUMENTO" type="Integer" visibility="public" />
+    <field name="KARD_TIPO" type="string" visibility="public" />
+    <field name="KARD_QUANTIDADE" type="string" visibility="public" />
+    <field name="KARD_ESTOQUE" type="string" visibility="public" />
+    <field name="CLI_CODIGO" type="Integer" visibility="public" />
+    <field name="EMPRE_CODIGOF" type="Integer" visibility="public" />
+    <field name="FUNC_CODIGO" type="string" visibility="public" />
+    <field name="KARD_COMPLEMENTO" type="string" visibility="public" />
+  </struct>
+  <struct name="RGERALESTMES">
+    <field name="EMPRE_CODIGO" type="Integer" visibility="public" />
+    <field name="PROD_CODIGO" type="Integer" visibility="public" />
+    <field name="ESTMES_DATA" type="Integer" visibility="public" />
+    <field name="ESTMES_ENT_QTD" type="string" visibility="public" />
+    <field name="ESTMES_ENT_VLR" type="string" visibility="public" />
+    <field name="ESTMES_SAI_QTD" type="string" visibility="public" />
+    <field name="ESTMES_SAI_VLR" type="string" visibility="public" />
+    <field name="ESTMES_CUSTO_FINAL" type="string" visibility="public" />
+    <field name="ESTMES_SUPERAVIT" type="string" visibility="public" />
+    <field name="ESTMES_PCO_ULT_VEN" type="string" visibility="public" />
+    <field name="ESTMES_MENOR_PRECO" type="string" visibility="public" />
+    <field name="ESTMES_MENOR_QTD" type="string" visibility="public" />
+    <field name="ESTMES_MENOR_NF" type="Integer" visibility="public" />
+    <field name="ESTMES_MENOR_DATA" type="string" visibility="public" />
+  </struct>
+  <struct name="RGERALESTMVTO">
+    <field name="EMPRE_CODIGO" type="Integer" visibility="public" />
+    <field name="PROD_CODIGO" type="Integer" visibility="public" />
+    <field name="ESTMVTO_DATA" type="string" visibility="public" />
+    <field name="ESTMVTO_DOCUMENTO" type="Integer" visibility="public" />
+    <field name="ESTMVTO_SERIE" type="string" visibility="public" />
+    <field name="CLI_CODIGO" type="Integer" visibility="public" />
+    <field name="ESTMVTO_QUANTIDADE" type="string" visibility="public" />
+    <field name="ESTMVTO_VALOR" type="string" visibility="public" />
+    <field name="NATU_CODIGO" type="Integer" visibility="public" />
+    <field name="REPRE_CODIGO" type="string" visibility="public" />
+    <field name="ESTMVTO_CUSTO" type="string" visibility="public" />
+    <field name="ESTMVTO_RECEITUARIO" type="Integer" visibility="public" />
+    <field name="ESTMVTO_SUPERAVIT" type="string" visibility="public" />
+    <field name="ESTMVTO_PERC_COMISSAO" type="string" visibility="public" />
+  </struct>
+  <struct name="RGERALCLIENTE">
+    <field name="CLI_CODIGO" type="string" visibility="public" />
+    <field name="CLI_TIPOCADAST" type="string" visibility="public" />
+    <field name="SITUACAO_TIPO" type="string" visibility="public" />
+    <field name="SITUACAO_CODIGO" type="string" visibility="public" />
+    <field name="CLI_NOME" type="string" visibility="public" />
+    <field name="CLI_TIPOPESSOA" type="string" visibility="public" />
+    <field name="CLI_CNPJCPF" type="string" visibility="public" />
+    <field name="CLI_DATNASC" type="string" visibility="public" />
+    <field name="TIPOLOGIA_CODIGO" type="string" visibility="public" />
+    <field name="ATIVIDADE_CODIGO" type="string" visibility="public" />
+    <field name="SITUACAO_TIPO1" type="string" visibility="public" />
+    <field name="SITUACAO_CODIGO1" type="string" visibility="public" />
+    <field name="CLI_FOTO" type="string" visibility="public" />
+    <field name="CLI_FICHA" type="string" visibility="public" />
+    <field name="CLI_REDE" type="string" visibility="public" />
+    <field name="CLI_ESPECIAL1" type="string" visibility="public" />
+    <field name="CLI_ESPECIAL2" type="string" visibility="public" />
+    <field name="CLI_OBS" type="WideString" visibility="public" />
+    <field name="CLI_DATAINC" type="string" visibility="public" />
+    <field name="CLI_DATAALT" type="string" visibility="public" />
+    <field name="CLI_DATAEXC" type="string" visibility="public" />
+    <field name="CLI_LIMITECRED" type="string" visibility="public" />
+    <field name="CLI_COMPRADATA" type="string" visibility="public" />
+    <field name="CLI_COMPRAVALOR" type="string" visibility="public" />
+    <field name="EMPRE_CODIGO" type="string" visibility="public" />
+    <field name="CLI_SEXO" type="string" visibility="public" />
+    <field name="CIDADE_CODDNE" type="string" visibility="public" />
+    <field name="CLI_ESTCIVIL" type="string" visibility="public" />
+    <field name="CLI_IDENTIDADE" type="string" visibility="public" />
+    <field name="CLI_IDEORGEXP" type="string" visibility="public" />
+    <field name="CLI_IDEUF" type="string" visibility="public" />
+    <field name="CLI_IDEDATA" type="string" visibility="public" />
+    <field name="CLI_CNH" type="string" visibility="public" />
+    <field name="CLI_CNHCATEG" type="string" visibility="public" />
+    <field name="CLI_TITULO" type="string" visibility="public" />
+    <field name="CLI_TITZONA" type="string" visibility="public" />
+    <field name="CLI_TITSECAO" type="string" visibility="public" />
+    <field name="CLI_CONSTIPO" type="string" visibility="public" />
+    <field name="CLI_CONSNUMERO" type="string" visibility="public" />
+    <field name="CLI_CONSUF" type="string" visibility="public" />
+    <field name="CLI_FANTASIA" type="string" visibility="public" />
+    <field name="CLI_CONTATO" type="string" visibility="public" />
+    <field name="CLI_IE" type="string" visibility="public" />
+    <field name="CLI_INSCMUN" type="string" visibility="public" />
+    <field name="CLI_CNAE" type="string" visibility="public" />
+    <field name="CLI_INSSUFRAMA" type="string" visibility="public" />
+    <field name="CLI_REPLEGAL" type="string" visibility="public" />
+    <field name="CLI_REPCPF" type="string" visibility="public" />
+    <field name="CLI_REPIDENTIDADE" type="string" visibility="public" />
+    <field name="CLI_REPIDEORGEXP" type="string" visibility="public" />
+    <field name="CLI_REPIDEUF" type="string" visibility="public" />
+    <field name="CLI_AREA_LIVRE_COM" type="string" visibility="public" />
+    <field name="CLI_RESCEP" type="string" visibility="public" />
+    <field name="CIDADE_CODDNERESID" type="string" visibility="public" />
+    <field name="CLI_RESCAIXAPOSTAL" type="string" visibility="public" />
+    <field name="CLI_RESENDERECO" type="string" visibility="public" />
+    <field name="CLI_RESENDCOMPLEM" type="string" visibility="public" />
+    <field name="CLI_RESENDNUMERO" type="string" visibility="public" />
+    <field name="CLI_RESBAIRRO" type="string" visibility="public" />
+    <field name="CLI_RESEMAIL" type="string" visibility="public" />
+    <field name="CLI_RESSITE" type="string" visibility="public" />
+    <field name="CLI_RESTELEFONE" type="string" visibility="public" />
+    <field name="CLI_RESFAX" type="string" visibility="public" />
+    <field name="CLI_RESCELULAR" type="string" visibility="public" />
+    <field name="CLI_ENTSIM" type="string" visibility="public" />
+    <field name="CLI_ENTCEP" type="string" visibility="public" />
+    <field name="CIDADE_CODDNEENT" type="string" visibility="public" />
+    <field name="CLI_ENTENDERECO" type="string" visibility="public" />
+    <field name="CLI_ENTENDCOMPLEM" type="string" visibility="public" />
+    <field name="CLI_ENTENDNUMERO" type="string" visibility="public" />
+    <field name="CLI_ENTBAIRRO" type="string" visibility="public" />
+    <field name="CLI_ENTTELEFONE" type="string" visibility="public" />
+    <field name="CLI_ENTCELULAR" type="string" visibility="public" />
+    <field name="CLI_PONTOREF" type="string" visibility="public" />
+    <field name="CLI_COBSIM" type="string" visibility="public" />
+    <field name="CLI_COBCEP" type="string" visibility="public" />
+    <field name="CIDADE_CODDNECOB" type="string" visibility="public" />
+    <field name="CLI_COBENDERECO" type="string" visibility="public" />
+    <field name="CLI_COBENDCOMPLEM" type="string" visibility="public" />
+    <field name="CLI_COBENDNUMERO" type="string" visibility="public" />
+    <field name="CLI_COBBAIRRO" type="string" visibility="public" />
+    <field name="CLI_COBTELEFONE" type="string" visibility="public" />
+    <field name="CLI_COBFAX" type="string" visibility="public" />
+    <field name="CLI_COBCELULAR" type="string" visibility="public" />
+    <field name="CLI_COBEMAIL" type="string" visibility="public" />
+    <field name="CLI_COBCAIXAPOSTAL" type="string" visibility="public" />
+    <field name="NATU_CODIGO" type="string" visibility="public" />
+    <field name="BANCO_CODIGO" type="string" visibility="public" />
+    <field name="PRECO_TABELA" type="string" visibility="public" />
+    <field name="PRECO_TABELA2" type="string" visibility="public" />
+    <field name="PRECO_TABELA3" type="string" visibility="public" />
+    <field name="PRECO_TABELA4" type="string" visibility="public" />
+    <field name="TRANSP_CODIGO" type="string" visibility="public" />
+    <field name="COND_CODIGO" type="string" visibility="public" />
+    <field name="SITUACAO_TIPO2" type="string" visibility="public" />
+    <field name="SITUACAO_CODIGO2" type="string" visibility="public" />
+    <field name="CLI_BOLETOTAXA" type="string" visibility="public" />
+    <field name="CLI_BOLETOMSG" type="string" visibility="public" />
+    <field name="CLI_CONDPGTO1" type="string" visibility="public" />
+    <field name="CLI_CONDPGTO2" type="string" visibility="public" />
+    <field name="CLI_CONDPGTO3" type="string" visibility="public" />
+    <field name="CLI_CONDPGTO4" type="string" visibility="public" />
+    <field name="CLI_COBFRETE" type="string" visibility="public" />
+    <field name="CLI_PRAZOENT" type="string" visibility="public" />
+    <field name="CLI_PRODGRAVOSO" type="string" visibility="public" />
+    <field name="ROTA_CODIGO" type="string" visibility="public" />
+    <field name="REPRE_CODIGO" type="string" visibility="public" />
+    <field name="REPRE_CODIGO2" type="string" visibility="public" />
+    <field name="REPRE_CODIGO3" type="string" visibility="public" />
+    <field name="REPRE_CODIGO4" type="string" visibility="public" />
+    <field name="REPRE_CODIGO5" type="string" visibility="public" />
+    <field name="CLI_DIASENT1" type="string" visibility="public" />
+    <field name="CLI_DIASENT2" type="string" visibility="public" />
+    <field name="CLI_DIASENT3" type="string" visibility="public" />
+    <field name="CLI_DIASENT4" type="string" visibility="public" />
+    <field name="CLI_DIASENT5" type="string" visibility="public" />
+    <field name="CLI_ZONEA1" type="string" visibility="public" />
+    <field name="CLI_ZONEA2" type="string" visibility="public" />
+    <field name="CLI_ZONEA3" type="string" visibility="public" />
+    <field name="CLI_ZONEA4" type="string" visibility="public" />
+    <field name="CLI_ZONEA5" type="string" visibility="public" />
+    <field name="CLI_ENDERECO" type="string" visibility="public" />
+    <field name="CLI_NUMERO" type="string" visibility="public" />
+    <field name="CLI_UF" type="string" visibility="public" />
+    <field name="CLI_TELEFONE" type="string" visibility="public" />
+    <field name="CLI_CIDADE" type="string" visibility="public" />
+    <field name="CLI_BAIRRO" type="string" visibility="public" />
+    <field name="CLI_COMP" type="string" visibility="public" />
+    <field name="CLI_MUNIBGE" type="string" visibility="public" />
+    <field name="CLI_CEP" type="string" visibility="public" />
+    <field name="CLI_PESSOA" type="string" visibility="public" />
+    <field name="SITUACAO_TIPO_FIN" type="string" visibility="public" />
+    <field name="SITUACAO_CODIGO_FIN" type="string" visibility="public" />
+    <field name="SALDO_DEVEDOR" type="Real" visibility="public" />
+    <field name="SITUACAO_TIPO_FIS" type="string" visibility="public" />
+    <field name="SITUACAO_CODIGO_FIS" type="string" visibility="public" />
+    <field name="SITUACAO_TIPO_CRED" type="string" visibility="public" />
+    <field name="SITUACAO_CODIGO_CRED" type="string" visibility="public" />
+  </struct>
+  <struct name="RGERALTRIBUTACAOPRODUTO">
+    <field name="imposto_cod_prod" type="string" visibility="public" />
+    <field name="imposto_tipo" type="string" visibility="public" />
+    <field name="imposto_sit_fiscal" type="string" visibility="public" />
+    <field name="imposto_uf" type="string" visibility="public" />
+    <field name="imposto_cod_tab" type="string" visibility="public" />
+  </struct>
+  <struct name="RGERALIMPOSTOS">
+    <field name="impostos_tipo" type="string" visibility="public" />
+    <field name="impostos_tabela" type="string" visibility="public" />
+    <field name="impostos_aliquota" type="string" visibility="public" />
+    <field name="impostos_base" type="string" visibility="public" />
+    <field name="impostos_mva" type="string" visibility="public" />
+    <field name="impostos_tabela_st" type="string" visibility="public" />
+    <field name="impostos_deflator" type="string" visibility="public" />
+    <field name="impostos_cst" type="string" visibility="public" />
+    <field name="impostos_cod_msg" type="string" visibility="public" />
+    <field name="impostos_red_io" type="string" visibility="public" />
+    <field name="impostos_sit_tributaria" type="string" visibility="public" />
+    <field name="impostos_csosn" type="string" visibility="public" />
+  </struct>
+  <struct name="RGERALLIVROSAIDA">
+    <field name="LIVRO_SAIDA_EMPRESA" type="Integer" visibility="public" />
+    <field name="LIVRO_SAIDA_DT_EMISSAO" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_ESPECIE" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_SERIE" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_NR" type="Integer" visibility="public" />
+    <field name="LIVRO_SAIDA_NR_FINAL" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_COD_FISCAL" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_VLR_CONTABIL" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_UF" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_CID" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_B_CALC_ICM1" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_B_CALC_ICM2" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_B_CALC_ICM3" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_B_CALC_ICM4" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_B_CALC_ICM5" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_B_CALC_ICM6" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_ALIQ_ICM1" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_ALIQ_ICM2" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_ALIQ_ICM3" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_ALIQ_ICM4" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_ALIQ_ICM5" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_ALIQ_ICM6" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_ISENTAS_ICM" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_OUTRAS_ICM" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_ICM_FRETE" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_VLR_ST" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_VLR_EVENTUAL" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_B_CALC_IPI" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_IMP_DB_IPI" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_ISENTAS_IPI" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_OUTRAS_IPI" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_OBS" type="string" visibility="public" />
+    <field name="CLI_CODIGO" type="Integer" visibility="public" />
+    <field name="NATU_CODIGO" type="Integer" visibility="public" />
+    <field name="LIVRO_SAIDA_PED" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_CANCANCELADO" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_VENDEDOR" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_VLR_ICM" type="string" visibility="public" />
+    <field name="TRANSP_CODIGO" type="Integer" visibility="public" />
+    <field name="LIVRO_SAIDA_MSG" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_BASE_ST" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_COD_IS" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_COD_OU" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_COD_ST" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_BASE_R_ST" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_BASE_IMP" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_VLR_ST_06" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_CID_ORIGEM" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_ISENTAS_CB" type="string" visibility="public" />
+    <field name="LIVRO_SAIDA_BASE_R_ST_AL" type="string" visibility="public" />
+  </struct>
+  <struct name="RGERALCOMISSAO">
+    <field name="EMPRE_CODIGO" type="Integer" visibility="public" />
+    <field name="COMISSAOREPRE_DATA" type="TDateTime" visibility="public" />
+    <field name="REPRE_CODIGO" type="Integer" visibility="public" />
+    <field name="NATU_CODIGO" type="Integer" visibility="public" />
+    <field name="COMISSAOREPRE_NR_NF" type="Integer" visibility="public" />
+    <field name="PREVENDA_CODIGO" type="string" visibility="public" />
+    <field name="CLI_CODIGO" type="Integer" visibility="public" />
+    <field name="COMISSAOREPRE_CLI" type="string" visibility="public" />
+    <field name="COMISSAOREPRE_VLR_NF" type="string" visibility="public" />
+    <field name="COMISSAOREPRE_COMIPERC" type="string" visibility="public" />
+    <field name="COMISSAOREPRE_QTD" type="string" visibility="public" />
+    <field name="COMISSAOREPRE_COMISSAO" type="Integer" visibility="public" />
+  </struct>
+  <struct name="RGERALITEMGRADE">
+    <field name="EMPRE_CODIGO" type="Integer" visibility="public" />
+    <field name="PROD_CODIGO" type="Integer" visibility="public" />
+    <field name="PROD_DATA_VALIDADE" type="string" visibility="public" />
+    <field name="PROD_LOTE" type="string" visibility="public" />
+    <field name="GRADE_CODIGO" type="Integer" visibility="public" />
+    <field name="GRADE_DESCRICAO" type="string" visibility="public" />
+    <field name="PROD_QUANTIDADE" type="string" visibility="public" />
+    <field name="PROD_DATA_FABRICACAO" type="string" visibility="public" />
+  </struct>
+  <struct name="RGERAL_PONTUACAO">
+    <field name="NR_CUPOM" type="string" visibility="public" />
+    <field name="NOTA_SERIE" type="string" visibility="public" />
+    <field name="CLI_CODIGO" type="string" visibility="public" />
+    <field name="LCTO" type="string" visibility="public" />
+    <field name="VALOR_COMPRA" type="string" visibility="public" />
+    <field name="data_compra" type="string" visibility="public" />
+    <field name="pontuacao" type="string" visibility="public" />
+    <field name="data_validade" type="string" visibility="public" />
+    <field name="data_resgate" type="string" visibility="public" />
+    <field name="situacao" type="string" visibility="public" />
+    <field name="valor_bonus" type="string" visibility="public" />
+    <field name="SITUACAO_DESCONTO" type="string" visibility="public" />
+  </struct>
+  <struct name="RGERALCUPOMTEMPORARIO">
+    <field name="EMPRE_CODIGO" type="string" visibility="public" />
+    <field name="NOTA_NUMERO" type="string" visibility="public" />
+    <field name="NOTA_SERIE" type="string" visibility="public" />
+    <field name="CLI_CODIGO" type="string" visibility="public" />
+    <field name="NOTA_DT_EMISSAO" type="string" visibility="public" />
+    <field name="NOTA_CFOP" type="string" visibility="public" />
+    <field name="NOTA_HORA" type="string" visibility="public" />
+    <field name="ITENS_SEQ" type="string" visibility="public" />
+    <field name="PROD_CODIGO" type="string" visibility="public" />
+    <field name="PROD_GRADE" type="string" visibility="public" />
+    <field name="ITENS_GRADE" type="string" visibility="public" />
+    <field name="ITENS_BARRAS" type="string" visibility="public" />
+    <field name="PEDIDO_NUMERO" type="string" visibility="public" />
+    <field name="ITENS_REPRE" type="string" visibility="public" />
+    <field name="ITENS_DTA_PEDIDO" type="string" visibility="public" />
+    <field name="ITENS_NCM" type="string" visibility="public" />
+    <field name="ITENS_UNIDADE" type="string" visibility="public" />
+    <field name="ITENS_QUANTIDADE" type="string" visibility="public" />
+    <field name="ITENS_CST" type="string" visibility="public" />
+    <field name="ITENS_DESC_PERC" type="string" visibility="public" />
+    <field name="ITENS_DESC2" type="string" visibility="public" />
+    <field name="ITENS_DESC3" type="string" visibility="public" />
+    <field name="ITENS_ACRES_PERC" type="string" visibility="public" />
+    <field name="ITENS_PESO" type="string" visibility="public" />
+    <field name="ITENS_PRECO_BRUTO" type="string" visibility="public" />
+    <field name="ITENS_PRECO_LIQUIDO" type="string" visibility="public" />
+    <field name="ITENS_PRECO_INT" type="string" visibility="public" />
+    <field name="ITENS_PMC" type="string" visibility="public" />
+    <field name="ITENS_TAB_ICMS" type="string" visibility="public" />
+    <field name="ITENS_ICM_BASE" type="string" visibility="public" />
+    <field name="ITENS_ICM_ALIQ" type="string" visibility="public" />
+    <field name="ITENS_ICM_VALOR" type="string" visibility="public" />
+    <field name="ITENS_RED_BASE" type="string" visibility="public" />
+    <field name="ITENS_RED_IS" type="string" visibility="public" />
+    <field name="ITENS_ICM_ISENTAS" type="string" visibility="public" />
+    <field name="ITENS_ICM_OUTRAS" type="string" visibility="public" />
+    <field name="ITENS_ALIQ_MVA" type="string" visibility="public" />
+    <field name="ITENS_ST_BASE" type="string" visibility="public" />
+    <field name="ITENS_ST_ALIQ" type="string" visibility="public" />
+    <field name="ITENS_ST_VALOR" type="string" visibility="public" />
+    <field name="ITENS_TAB_IPI" type="string" visibility="public" />
+    <field name="ITENS_ALIQ_IPI" type="string" visibility="public" />
+    <field name="ITENS_IPI_BASE" type="string" visibility="public" />
+    <field name="ITENS_IPI_VALOR" type="string" visibility="public" />
+    <field name="ITENS_TAB_PIS" type="string" visibility="public" />
+    <field name="ITENS_ALIQ_PIS" type="string" visibility="public" />
+    <field name="ITENS_PIS_BASE" type="string" visibility="public" />
+    <field name="ITENS_PIS_VALOR" type="string" visibility="public" />
+    <field name="ITENS_TAB_COFINS" type="string" visibility="public" />
+    <field name="ITENS_ALIQ_COFINS" type="string" visibility="public" />
+    <field name="ITENS_COFINS_BASE" type="string" visibility="public" />
+    <field name="ITENS_COFINS_VALOR" type="string" visibility="public" />
+    <field name="ITENS_DESCONTO" type="string" visibility="public" />
+    <field name="ITENS_ACRESCIMO" type="string" visibility="public" />
+    <field name="ITENS_IO" type="string" visibility="public" />
+    <field name="ITENS_PROD_GRADE" type="string" visibility="public" />
+    <field name="ITENS_DESC_GRADE" type="string" visibility="public" />
+    <field name="ITENS_SITUACAO" type="string" visibility="public" />
+    <field name="ITENS_MODELO" type="string" visibility="public" />
+    <field name="ITENS_IS" type="string" visibility="public" />
+    <field name="ITENS_SUB_TOTAL_CUPOM" type="string" visibility="public" />
+    <field name="ITENS_TOTAL_CUPOM" type="string" visibility="public" />
+    <field name="ITENS_TOTAL_DESCONTO_CUPOM" type="string" visibility="public" />
+    <field name="ITENS_TOTAL_DESCONTO" type="string" visibility="public" />
+    <field name="ITENS_VALOR_IMPOSTO" type="string" visibility="public" />
+  </struct>
+  <struct name="RGERALPRODUTOS">
+    <field name="empre_codigo" type="string" visibility="public" />
+    <field name="prod_codigo" type="string" visibility="public" />
+    <field name="prod_grupo" type="string" visibility="public" />
+    <field name="prod_subgrp" type="string" visibility="public" />
+    <field name="prod_divisao" type="string" visibility="public" />
+    <field name="prod_descricao" type="string" visibility="public" />
+    <field name="prod_complemento" type="string" visibility="public" />
+    <field name="prod_unid_venda" type="string" visibility="public" />
+    <field name="prod_ref_forn" type="string" visibility="public" />
+    <field name="prod_marca" type="string" visibility="public" />
+    <field name="prod_ncm" type="string" visibility="public" />
+    <field name="prod_barras" type="string" visibility="public" />
+    <field name="prod_qtd_caixa" type="string" visibility="public" />
+    <field name="preco_tabela" type="string" visibility="public" />
+    <field name="preco_preco" type="string" visibility="public" />
+    <field name="prod_ex" type="string" visibility="public" />
+    <field name="prod_cest" type="string" visibility="public" />
+    <field name="PROD_LOTE" type="string" visibility="public" />
+    <field name="prod_PesoBruto" type="string" visibility="public" />
+    <field name="prod_QtdVenda" type="string" visibility="public" />
+    <field name="prod_VlrUnitario" type="string" visibility="public" />
+    <field name="prod_pmc" type="string" visibility="public" />
+    <field name="prod_per_pmc" type="string" visibility="public" />
+  </struct>
+  <struct name="RGERALCANCELACUPOM">
+    <field name="EMPRE_CODIGO" type="Integer" visibility="public" />
+    <field name="CODIGO_PRODUTO" type="Integer" visibility="public" />
+    <field name="CODIGO_CLIENTE" type="Integer" visibility="public" />
+    <field name="CODIGO_REPRESENTANTE" type="Integer" visibility="public" />
+    <field name="QUANTIDADE" type="string" visibility="public" />
+    <field name="PRECO_BRUTO" type="string" visibility="public" />
+    <field name="PRECO_LIQUIDO" type="string" visibility="public" />
+    <field name="DESCONTO" type="string" visibility="public" />
+    <field name="CUPOM" type="Integer" visibility="public" />
+    <field name="SERIE" type="string" visibility="public" />
+    <field name="TABELA" type="string" visibility="public" />
+    <field name="CODIGO_NATUREZA" type="Integer" visibility="public" />
+    <field name="PEDIDO01" type="string" visibility="public" />
+    <field name="PEDIDO02" type="string" visibility="public" />
+    <field name="VALOR_NOTA" type="string" visibility="public" />
+    <field name="NATUREZA" type="string" visibility="public" />
+    <field name="PROD_GRADE" type="Integer" visibility="public" />
+    <field name="GRADE" type="string" visibility="public" />
+    <field name="DATA" type="string" visibility="public" />
+  </struct>
+  <struct name="RGERALIBPT">
+    <field name="ibpt_codigo" type="string" visibility="public" />
+    <field name="ibpt_ex" type="string" visibility="public" />
+    <field name="ibpt_tabela" type="string" visibility="public" />
+    <field name="ibpt_descricao" type="string" visibility="public" />
+    <field name="ibpt_Aliq_Nacional" type="string" visibility="public" />
+    <field name="ibpt_Aliq_Importada" type="string" visibility="public" />
+    <field name="ibpt_Versao" type="string" visibility="public" />
+  </struct>
+  <struct name="RCONFIGURADORPEDIDO">
+    <field name="empre_codigo" type="string" visibility="public" />
+    <field name="config_ped_digitado" type="string" visibility="public" />
+    <field name="config_ped_vendrepre" type="string" visibility="public" />
+    <field name="repre_codigo" type="string" visibility="public" />
+    <field name="config_ped_comissao" type="string" visibility="public" />
+    <field name="config_ped_natureza" type="string" visibility="public" />
+    <field name="natu_codigo" type="string" visibility="public" />
+    <field name="config_ped_banco" type="string" visibility="public" />
+    <field name="banco_codigo" type="string" visibility="public" />
+    <field name="config_ped_transportadora" type="string" visibility="public" />
+    <field name="transp_codigo" type="string" visibility="public" />
+    <field name="config_ped_redespacho" type="string" visibility="public" />
+    <field name="respacho_codigo" type="string" visibility="public" />
+    <field name="config_ped_impressora" type="string" visibility="public" />
+    <field name="config_imp_colunas" type="string" visibility="public" />
+    <field name="config_ped_pesovolume" type="string" visibility="public" />
+    <field name="config_ped_valorfrete" type="string" visibility="public" />
+    <field name="config_ped_observacao" type="string" visibility="public" />
+    <field name="config_ped_contato" type="string" visibility="public" />
+    <field name="config_ped_descontoTotal" type="string" visibility="public" />
+    <field name="config_ped_vlrDescontoTotal" type="string" visibility="public" />
+    <field name="config_ped_descontoItem" type="string" visibility="public" />
+    <field name="config_ped_vlrDescontoItem" type="string" visibility="public" />
+    <field name="config_ped_dataentrega" type="string" visibility="public" />
+    <field name="config_ped_especie" type="string" visibility="public" />
+    <field name="config_ped_controlaestoque" type="string" visibility="public" />
+    <field name="config_ped_sujestaocompra" type="string" visibility="public" />
+    <field name="config_ped_tabela" type="string" visibility="public" />
+    <field name="config_ped_tabelaPreco" type="string" visibility="public" />
+    <field name="cli_codigo" type="string" visibility="public" />
+    <field name="config_ped_cliente" type="string" visibility="public" />
+    <field name="config_modelo_barras" type="string" visibility="public" />
+    <field name="configura_pedido" type="string" visibility="public" />
+    <field name="config_relatorios" type="string" visibility="public" />
+    <field name="config_ped_pesquisa" type="string" visibility="public" />
+    <field name="natu_codigo_condicional" type="string" visibility="public" />
+  </struct>
+  <struct name="RCONFIGURACAOECF">
+    <field name="Terminal" type="Integer" visibility="public" />
+    <field name="ConfPedeQuantidade" type="string" visibility="public" />
+    <field name="ConfPedeDesconto" type="string" visibility="public" />
+    <field name="ConfTipoDesconto" type="string" visibility="public" />
+    <field name="ConfValorDesconto" type="string" visibility="public" />
+    <field name="ConfPedeAcrescimo" type="string" visibility="public" />
+    <field name="ConfTipoAcrescimo" type="string" visibility="public" />
+    <field name="ConfValorAcrescimo" type="string" visibility="public" />
+    <field name="ConfPedeGrade" type="string" visibility="public" />
+    <field name="ConfPedeCliente" type="string" visibility="public" />
+    <field name="ConfCliente" type="string" visibility="public" />
+    <field name="ConfPedeVendedor" type="string" visibility="public" />
+    <field name="ConfVendedor" type="string" visibility="public" />
+    <field name="ConfPedeTabela" type="string" visibility="public" />
+    <field name="ConfTabela" type="string" visibility="public" />
+    <field name="ConfPedeDescontoTotal" type="string" visibility="public" />
+    <field name="ConfTipoDescontoTotal" type="string" visibility="public" />
+    <field name="ConfValorDescontoTotal" type="string" visibility="public" />
+    <field name="ConfPedeAcrescimoTotal" type="string" visibility="public" />
+    <field name="ConfTipoAcrescimoTotal" type="string" visibility="public" />
+    <field name="ConfValorAcrescimoTotal" type="string" visibility="public" />
+    <field name="ConfLimiteCredito" type="string" visibility="public" />
+    <field name="ConfVerificaEstoque" type="string" visibility="public" />
+    <field name="ConfMsgPromocional" type="string" visibility="public" />
+    <field name="ConfCaminhoGeracaoVenda" type="string" visibility="public" />
+    <field name="ConfCaminhoGeracaoFechamento" type="string" visibility="public" />
+    <field name="ConfCaminhoAtualizacao" type="string" visibility="public" />
+    <field name="ConfCaminhoGestao" type="string" visibility="public" />
+    <field name="ConfNatureza" type="string" visibility="public" />
+    <field name="ConfMeioPagamento" type="string" visibility="public" />
+  </struct>
+  <struct name="RCONFIGURA_REPRE">
+    <field name="EMPRE_CODIGO" type="string" visibility="public" />
+    <field name="CONF_REPRE_TIPO" type="string" visibility="public" />
+    <field name="CONF_REPRE_VALOR1" type="string" visibility="public" />
+    <field name="CONF_REPRE_VALOR2" type="string" visibility="public" />
+    <field name="CONF_REPRE_VALOR3" type="string" visibility="public" />
+    <field name="CONF_REPRE_VALOR4" type="string" visibility="public" />
+    <field name="CONF_REPRE_VALOR5" type="string" visibility="public" />
+    <field name="CONF_REPRE_VALOR6" type="string" visibility="public" />
+    <field name="CONF_REPRE_VALOR7" type="string" visibility="public" />
+    <field name="CONF_REPRE_VALOR8" type="string" visibility="public" />
+    <field name="CONF_REPRE_VALOR9" type="string" visibility="public" />
+    <field name="CONF_REPRE_VALOR10" type="string" visibility="public" />
+    <field name="CONF_REPRE_TIPO_COMISS" type="string" visibility="public" />
+    <field name="CONF_REPRE_COMISS1" type="string" visibility="public" />
+    <field name="CONF_REPRE_COMISS2" type="string" visibility="public" />
+    <field name="CONF_REPRE_COMISS3" type="string" visibility="public" />
+    <field name="CONF_REPRE_COMISS4" type="string" visibility="public" />
+    <field name="CONF_REPRE_COMISS5" type="string" visibility="public" />
+    <field name="CONF_REPRE_COMISS6" type="string" visibility="public" />
+    <field name="CONF_REPRE_COMISS7" type="string" visibility="public" />
+    <field name="CONF_REPRE_COMISS8" type="string" visibility="public" />
+    <field name="CONF_REPRE_COMISS9" type="string" visibility="public" />
+    <field name="CONF_REPRE_COMISS10" type="string" visibility="public" />
+  </struct>
+  <struct name="RLINHAFORMATADA">
+    <field name="EMPRE_CODIGO" type="Integer" visibility="public" />
+    <field name="CUPOM_DATA" type="TDateTime" visibility="public" />
+    <field name="CUPOM_NUMERO" type="string" visibility="public" />
+    <field name="CUPOM_SEQUENCIA" type="string" visibility="public" />
+    <field name="CUPOM_SITUACAO" type="string" visibility="public" />
+    <field name="PROD_CODIGO" type="string" visibility="public" />
+    <field name="PROD_DATA_VALIDADE" type="string" visibility="public" />
+    <field name="PROD_DATA_PEDIDO" type="string" visibility="public" />
+    <field name="PROD_LOTE" type="string" visibility="public" />
+    <field name="CODIGO_GRADE" type="string" visibility="public" />
+    <field name="DESC_GRADE" type="string" visibility="public" />
+    <field name="CUPOM_BARRAS" type="string" visibility="public" />
+    <field name="CUPOM_QUANTIDADE" type="string" visibility="public" />
+    <field name="CUPOM_CASASDECIMAIS" type="Integer" visibility="public" />
+    <field name="CUPOM_TIPOQUANTIDADE" type="string" visibility="public" />
+    <field name="CUPOM_TIPODESCONTO" type="string" visibility="public" />
+    <field name="CUPOM_PRECO_UNITARIO" type="string" visibility="public" />
+    <field name="CUPOM_PRECO" type="string" visibility="public" />
+    <field name="CUPOM_PRECO_TOTAL" type="string" visibility="public" />
+    <field name="CUPOM_DESCONTO_ITEM" type="string" visibility="public" />
+    <field name="CUPOM_TABELA" type="string" visibility="public" />
+    <field name="PROD_DESCRICAO" type="string" visibility="public" />
+    <field name="CUPOM_QTD_CAIXA" type="string" visibility="public" />
+    <field name="PROD_USA_GRADE" type="string" visibility="public" />
+    <field name="PROD_ALIQUOTA" type="string" visibility="public" />
+    <field name="UNIDADEVENDA" type="string" visibility="public" />
+  </struct>
+  <struct name="RREDUCAO">
+    <field name="reducao_loja" type="Double" visibility="public" />
+    <field name="reducao_data" type="string" visibility="public" />
+    <field name="reducao_maq" type="Double" visibility="public" />
+    <field name="reducao_nr_serie" visibility="public">
+      <type name="reducao_nr_serie" type="ShortString" />
+    </field>
+    <field name="reducao_cup_ini" type="Double" visibility="public" />
+    <field name="reducao_cup_fim" type="Double" visibility="public" />
+    <field name="reducao_cup_red" type="Double" visibility="public" />
+    <field name="reducao_gt_ini" type="Double" visibility="public" />
+    <field name="reducao_gt_final" type="Double" visibility="public" />
+    <field name="reducao_aliq1" type="Double" visibility="public" />
+    <field name="reducao_aliq2" type="Double" visibility="public" />
+    <field name="reducao_aliq3" type="Double" visibility="public" />
+    <field name="reducao_aliq4" type="Double" visibility="public" />
+    <field name="reducao_aliq5" type="Double" visibility="public" />
+    <field name="reducao_aliq6" type="Double" visibility="public" />
+    <field name="reducao_aliq7" type="Double" visibility="public" />
+    <field name="reducao_aliq8" type="Double" visibility="public" />
+    <field name="reducao_aliq9" type="Double" visibility="public" />
+    <field name="reducao_aliq10" type="Double" visibility="public" />
+    <field name="reducao_aliq11" type="Double" visibility="public" />
+    <field name="reducao_aliq12" type="Double" visibility="public" />
+    <field name="reducao_aliq13" type="Double" visibility="public" />
+    <field name="reducao_aliq14" type="Double" visibility="public" />
+    <field name="reducao_aliq15" type="Double" visibility="public" />
+    <field name="reducao_aliq16" type="Double" visibility="public" />
+    <field name="reducao_vlr1" type="Double" visibility="public" />
+    <field name="reducao_vlr2" type="Double" visibility="public" />
+    <field name="reducao_vlr3" type="Double" visibility="public" />
+    <field name="reducao_vlr4" type="Double" visibility="public" />
+    <field name="reducao_vlr5" type="Double" visibility="public" />
+    <field name="reducao_vlr6" type="Double" visibility="public" />
+    <field name="reducao_vlr7" type="Double" visibility="public" />
+    <field name="reducao_vlr8" type="Double" visibility="public" />
+    <field name="reducao_vlr9" type="Double" visibility="public" />
+    <field name="reducao_vlr10" type="Double" visibility="public" />
+    <field name="reducao_vlr11" type="Double" visibility="public" />
+    <field name="reducao_vlr12" type="Double" visibility="public" />
+    <field name="reducao_vlr13" type="Double" visibility="public" />
+    <field name="reducao_vlr14" type="Double" visibility="public" />
+    <field name="reducao_vlr15" type="Double" visibility="public" />
+    <field name="reducao_vlr16" type="Double" visibility="public" />
+    <field name="reducao_st" type="Double" visibility="public" />
+    <field name="reducao_nt" type="Double" visibility="public" />
+    <field name="reducao_is" type="Double" visibility="public" />
+    <field name="reducao_issqn" type="Double" visibility="public" />
+    <field name="reducao_canc" type="Double" visibility="public" />
+    <field name="reducao_desc" type="Double" visibility="public" />
+    <field name="reducao_status1" visibility="public">
+      <type name="reducao_status1" type="ShortString" />
+    </field>
+    <field name="reducao_seqarq" type="Double" visibility="public" />
+  </struct>
+  <struct name="RCLIENTE">
+    <field name="CODIGO_CLIENTE" visibility="public">
+      <type name="CODIGO_CLIENTE" type="ShortString" />
+    </field>
+    <field name="NOME_CLIENTE" visibility="public">
+      <type name="NOME_CLIENTE" type="ShortString" />
+    </field>
+    <field name="TIPO" visibility="public">
+      <type name="TIPO" type="ShortString" />
+    </field>
+    <field name="CPF_CGC" visibility="public">
+      <type name="CPF_CGC" type="ShortString" />
+    </field>
+    <field name="ENDERECO" visibility="public">
+      <type name="ENDERECO" type="ShortString" />
+    </field>
+    <field name="TELEFONE" visibility="public">
+      <type name="TELEFONE" type="ShortString" />
+    </field>
+    <field name="IE" visibility="public">
+      <type name="IE" type="ShortString" />
+    </field>
+  </struct>
+  <struct name="RPARAMETROS">
+    <field name="PARA_CODIGO" type="Real" visibility="public" />
+    <field name="PARA_CAMINHO" visibility="public">
+      <type name="PARA_CAMINHO" type="ShortString" />
+    </field>
+  </struct>
+  <struct name="RPARAMETRO_EMPRESA">
+    <field name="PARA_CODIGO_EMPRESA" type="Real" visibility="public" />
+    <field name="PARA_CAMINHO_EMPRESA" visibility="public">
+      <type name="PARA_CAMINHO_EMPRESA" type="ShortString" />
+    </field>
+  </struct>
+  <struct name="RCAMINHOCONTBILINI">
+    <field name="Versao" type="string" visibility="public" />
+    <field name="CaminhoG" type="string" visibility="public" />
+    <field name="CaminhoR" type="string" visibility="public" />
+    <field name="CaminhoA" type="string" visibility="public" />
+    <field name="CaminhoZ" type="string" visibility="public" />
+    <field name="CaminhoB" type="string" visibility="public" />
+    <field name="CaminhoLeituraG" type="string" visibility="public" />
+    <field name="CaminhoLeituraR" type="string" visibility="public" />
+    <field name="CaminhoLeituraA" type="string" visibility="public" />
+    <field name="CaminhoLeituraZ" type="string" visibility="public" />
+    <field name="CaminhoLeituraB" type="string" visibility="public" />
+    <field name="CaminhoOracle" type="string" visibility="public" />
+    <field name="dataBaseName" type="string" visibility="public" />
+    <field name="Usuario" type="string" visibility="public" />
+  </struct>
+  <struct name="RARQUIVOINI">
+    <field name="SERVIDOR" type="string" visibility="public" />
+    <field name="CAMINHOBASE" type="string" visibility="public" />
+    <field name="CAMINHONFE" type="string" visibility="public" />
+    <field name="CORFUNDO" type="Integer" visibility="public" />
+    <field name="BKPNFE" type="string" visibility="public" />
+    <field name="USUARIO" type="string" visibility="public" />
+    <field name="SENHA" type="string" visibility="public" />
+    <field name="CAMINHOXML" type="string" visibility="public" />
+    <field name="RETORNOXML" type="string" visibility="public" />
+    <field name="CAMINHORETORNO" type="string" visibility="public" />
+    <field name="CAMINHOSESSAO" type="string" visibility="public" />
+    <field name="CAMINHOFOTOUSUARIO" type="string" visibility="public" />
+    <field name="PDF1VIA" type="string" visibility="public" />
+    <field name="BUSCALOTE" type="string" visibility="public" />
+    <field name="RESOLUCAO" type="Integer" visibility="public" />
+    <field name="SISGESTAOSERVIDOR" type="string" visibility="public" />
+    <field name="EXESERVIDOR" type="string" visibility="public" />
+    <field name="LOGERROSBACKUP" type="string" visibility="public" />
+  </struct>
+  <struct name="RCONFSISGESTAO">
+    <field name="empre_codigo" type="Integer" visibility="public" />
+    <field name="config_imagemfundo" type="string" visibility="public" />
+    <field name="config_imagemsplash" type="string" visibility="public" />
+    <field name="config_caminhoskin" type="string" visibility="public" />
+    <field name="config_logorelatorio" type="string" visibility="public" />
+    <field name="config_fotosprodutos" type="string" visibility="public" />
+    <field name="config_fotosclientes" type="string" visibility="public" />
+    <field name="config_fotosfuncionario" type="string" visibility="public" />
+    <field name="config_sessaologin" type="string" visibility="public" />
+    <field name="config_rss" type="string" visibility="public" />
+    <field name="config_spc" type="string" visibility="public" />
+    <field name="config_erros_backup" type="string" visibility="public" />
+  </struct>
+  <struct name="RCONFIGURAETIQUETAS">
+    <field name="caminhoetiqueta" type="string" visibility="public" />
+    <field name="modeloetiqueta" type="string" visibility="public" />
+  </struct>
+  <struct name="RFUNCIONARIO">
+    <field name="EMPRE_CODIGO" type="Integer" visibility="public" />
+    <field name="FUNC_CODIGO" type="string" visibility="public" />
+    <field name="FUNC_NOME" type="string" visibility="public" />
+    <field name="FUNC_ENDERECO" type="string" visibility="public" />
+    <field name="FUNC_NUMERO" type="string" visibility="public" />
+    <field name="FUNC_COMPLEMENTO" type="string" visibility="public" />
+    <field name="FUNC_BAIRRO" type="string" visibility="public" />
+    <field name="FUNC_CEP" type="string" visibility="public" />
+    <field name="CIDADE_CODDNE" type="Integer" visibility="public" />
+    <field name="FUNC_TELFIXO" type="string" visibility="public" />
+    <field name="FUNC_TELCELULAR" type="string" visibility="public" />
+    <field name="FUNC_SEXO" type="string" visibility="public" />
+    <field name="FUNC_EMAIL" type="string" visibility="public" />
+    <field name="FUNC_CTPSNUMERO" type="string" visibility="public" />
+    <field name="FUNC_CTPSSERIE" type="string" visibility="public" />
+    <field name="FUNC_CPF" type="string" visibility="public" />
+    <field name="FUNC_TITELEITORALNUMERO" type="string" visibility="public" />
+    <field name="FUNC_TITELEITORALZONA" type="string" visibility="public" />
+    <field name="FUNC_TITELEITORALSECAO" type="string" visibility="public" />
+    <field name="FUNC_IDENTIDADE" type="string" visibility="public" />
+    <field name="FUNC_ORGAOEMISSOR" type="string" visibility="public" />
+    <field name="FUNC_DATAADMISSAO" type="TDateTime" visibility="public" />
+    <field name="FUNC_DATADEMISSAO" type="TDateTime" visibility="public" />
+    <field name="CARGO_CODIGO" type="Double" visibility="public" />
+    <field name="FUNC_NASCIMENTO" type="TDateTime" visibility="public" />
+    <field name="FUNC_NACIONALIDADE" type="string" visibility="public" />
+    <field name="FUNC_GRAUINSTRUCAO" type="string" visibility="public" />
+    <field name="FUNC_ESTADOCIVIL" type="string" visibility="public" />
+    <field name="FUNC_NOMECONJUGE" type="string" visibility="public" />
+    <field name="FUNC_HABILITACAO" type="string" visibility="public" />
+    <field name="FUNC_CATEGORIA" type="string" visibility="public" />
+    <field name="FUNC_VALIDADE" type="TDateTime" visibility="public" />
+    <field name="FUNC_PRIMHABILITACAO" type="TDateTime" visibility="public" />
+    <field name="FUNC_SISTEMA" type="string" visibility="public" />
+    <field name="FUNC_CERTMILITAR_SERIE" type="string" visibility="public" />
+    <field name="FUNC_CERTMILITAR_CATEGORIA" type="string" visibility="public" />
+    <field name="FUNC_FILIACAO_MAE" type="string" visibility="public" />
+    <field name="FUNC_FILIACAO_PAI" type="string" visibility="public" />
+    <field name="FUNC_FGTS_OPTANTE" type="string" visibility="public" />
+    <field name="FUNC_FGTS_DATAOPCAO" type="TDateTime" visibility="public" />
+    <field name="FUNC_FGTS_DATARETRATACAO" type="TDateTime" visibility="public" />
+    <field name="FUNC_FGTS_BANCODEPOSITARIO" type="Integer" visibility="public" />
+    <field name="FUNC_PIS_DATACADASTRO" type="TDateTime" visibility="public" />
+    <field name="FUNC_PIS_NUMERO" type="string" visibility="public" />
+    <field name="BANCO_CODIGO" type="Integer" visibility="public" />
+    <field name="FUNC_BANCOAGENCIA" type="Integer" visibility="public" />
+    <field name="FUNC_BANCOCONTA" type="string" visibility="public" />
+    <field name="SENHA_SENHA" type="string" visibility="public" />
+    <field name="SENHA_SKIN" type="string" visibility="public" />
+    <field name="SENHA_NIVEL" type="string" visibility="public" />
+    <field name="SENHA_CORCAMPOS" type="Integer" visibility="public" />
+    <field name="FUNC_RETORNOSENHA" type="string" visibility="public" />
+    <field name="MENU_ATUAL" type="string" visibility="public" />
+    <field name="EMPRE_RAZAOSOCIAL" type="string" visibility="public" />
+    <field name="EMPRE_CNPJ" type="string" visibility="public" />
+    <field name="EMPRE_UF" type="string" visibility="public" />
+    <field name="EMPRE_INSCESTADUAL" type="string" visibility="public" />
+    <field name="EMPRE_INSCMUNICIPAL" type="string" visibility="public" />
+    <field name="EMPRE_CNAE" type="string" visibility="public" />
+    <field name="EMPRE_REGJUNTACOMERCIAL" type="string" visibility="public" />
+    <field name="EMPRE_DATAREGISTRO" type="TDateTime" visibility="public" />
+    <field name="EMPRE_TELEFONE" type="string" visibility="public" />
+    <field name="EMPRE_FAX" type="string" visibility="public" />
+    <field name="EMPRE_PAGA_IPI" type="Integer" visibility="public" />
+    <field name="EMPRE_SITUACAO" type="string" visibility="public" />
+    <field name="EMPRE_SIMPLESNACIONAL" type="Integer" visibility="public" />
+    <field name="EMPRE_TIPO_PGTOIPI" type="Integer" visibility="public" />
+    <field name="EMPRE_SITE" type="string" visibility="public" />
+    <field name="EMPRE_EMAIL" type="string" visibility="public" />
+    <field name="EMPRE_INTEGRA_CONTAB" type="Integer" visibility="public" />
+    <field name="EMPRE_COD_EMPRE_CONTAB" type="Double" visibility="public" />
+    <field name="EMPRE_PROPRIETARIO" type="string" visibility="public" />
+    <field name="EMPRE_SOCIOPROP" type="string" visibility="public" />
+    <field name="EMPRE_RESP_TECNICO" type="string" visibility="public" />
+    <field name="EMPRE_CONTADOR" type="string" visibility="public" />
+    <field name="EMPRE_CRC" type="string" visibility="public" />
+    <field name="EMPRE_FONE_CONTADOR" type="string" visibility="public" />
+    <field name="EMPRE_CIDCONTADOR" type="Double" visibility="public" />
+    <field name="EMPRE_ATIVIDADE" type="string" visibility="public" />
+    <field name="EMPRE_LOGOTIPO" type="string" visibility="public" />
+    <field name="EMPRE_MODELODANFE" type="string" visibility="public" />
+    <field name="EMPRE_AMBIENTE" type="string" visibility="public" />
+    <field name="EMPRE_MODCOMPROVANTE" type="string" visibility="public" />
+    <field name="EMPRE_CONTINGENCIA" type="string" visibility="public" />
+    <field name="EMPRE_CANCELAMENTO" type="string" visibility="public" />
+    <field name="EMPRE_DTCERTIFIC" type="string" visibility="public" />
+    <field name="EMPRE_CERTIFICADO" type="string" visibility="public" />
+    <field name="EMPRE_SIGLAWS" type="string" visibility="public" />
+    <field name="EMPRE_VERSAONFE" type="string" visibility="public" />
+    <field name="EMPRE_CONSICM" type="string" visibility="public" />
+    <field name="EMPRE_CONSCEP" type="string" visibility="public" />
+    <field name="EMPRE_PROXY" type="string" visibility="public" />
+    <field name="EMPRE_PROXYPORTA" type="string" visibility="public" />
+    <field name="EMPRE_PROXYUSUARIO" type="string" visibility="public" />
+    <field name="EMPRE_PROXYSENHA" type="string" visibility="public" />
+    <field name="FUNC_REPLICA" type="string" visibility="public" />
+    <field name="FUNC_TIPO_USU" type="string" visibility="public" />
+    <field name="FUNC_BOTOES" type="string" visibility="public" />
+    <field name="EMPRE_CEP" type="string" visibility="public" />
+    <field name="EMPRE_ENDERECO" type="string" visibility="public" />
+    <field name="EMPRE_NUMERO" type="string" visibility="public" />
+    <field name="EMPRE_COMPLEMENTO" type="string" visibility="public" />
+    <field name="EMPRE_BAIRRO" type="string" visibility="public" />
+    <field name="EMPRE_CIDADE" type="string" visibility="public" />
+    <field name="EMPRE_CRT" type="string" visibility="public" />
+    <field name="NFE_LOGOTIPO" type="string" visibility="public" />
+    <field name="nfe_geranota" type="string" visibility="public" />
+    <field name="nfe_caminhonfe" type="string" visibility="public" />
+    <field name="nfe_backupnfe" type="string" visibility="public" />
+    <field name="nfe_retornonfe" type="string" visibility="public" />
+    <field name="nfe_retornoxml" type="string" visibility="public" />
+    <field name="nfe_geratxtxml" type="string" visibility="public" />
+    <field name="nfe_versao" type="string" visibility="public" />
+    <field name="nfe_siglaws" type="string" visibility="public" />
+    <field name="nfe_consultaicm" type="string" visibility="public" />
+    <field name="nfe_consultacep" type="string" visibility="public" />
+    <field name="nfe_ctaemail" type="string" visibility="public" />
+    <field name="nfe_gerapdf" type="string" visibility="public" />
+    <field name="nfe_caminhopdf" type="string" visibility="public" />
+    <field name="nfe_2via" type="string" visibility="public" />
+    <field name="nfe_segundos" type="string" visibility="public" />
+    <field name="nfe_obs" type="string" visibility="public" />
+    <field name="EMPRE_ESPECIFICA" type="Integer" visibility="public" />
+    <field name="nfe_bat_retorno" type="string" visibility="public" />
+    <field name="nfe_bat_cancelamento" type="string" visibility="public" />
+    <field name="nfe_testa_versao" type="string" visibility="public" />
+    <field name="NFE_DANFE" type="string" visibility="public" />
+    <field name="NFE_HORA_UTC" type="string" visibility="public" />
+    <field name="NFE_VARIOS_USUARIOS" type="string" visibility="public" />
+    <field name="NFCE_DANFE" type="string" visibility="public" />
+    <field name="NFCE_LOGOTIPO" type="string" visibility="public" />
+    <field name="NFCE_TEMPO_RETORNO" type="string" visibility="public" />
+    <field name="NFCE_QRCODE_VERSAO" type="string" visibility="public" />
+    <field name="NFCE_QRCODE_IDTOKEN" type="string" visibility="public" />
+    <field name="NFCE_QRCODE_CSC" type="string" visibility="public" />
+    <field name="NFCE_QRCODE_ESCALA" type="string" visibility="public" />
+    <field name="NFCE_QRCODE_PASTA" type="string" visibility="public" />
+    <field name="NFE_TABLET_USA" type="string" visibility="public" />
+    <field name="NFE_TABLET_PASTA" type="string" visibility="public" />
+    <field name="NFE_TABLET_PDF" type="string" visibility="public" />
+    <field name="NFE_TABLET_XML" type="string" visibility="public" />
+    <field name="NFE_TABLET_RET" type="string" visibility="public" />
+    <field name="NFCE_CONTINGENCIA" type="string" visibility="public" />
+    <field name="MODELO_DOC" type="string" visibility="public" />
+    <field name="FUNC_CODDNE" type="string" visibility="public" />
+    <field name="FUNC_CIDADEIBGE" type="string" visibility="public" />
+    <field name="FUNC_CIDADENOME" type="string" visibility="public" />
+    <field name="FUNC_UFNOME" type="string" visibility="public" />
+    <field name="FUNC_UFIBGE" type="string" visibility="public" />
+    <field name="FUNC_PAISIBGE" type="string" visibility="public" />
+    <field name="EMPRE_NOMEFANTASIA" type="string" visibility="public" />
+    <field name="EMPRE_CODDNE" type="string" visibility="public" />
+    <field name="EMPRE_CIDADEIBGE" type="string" visibility="public" />
+    <field name="EMPRE_CIDADENOME" type="string" visibility="public" />
+    <field name="EMPRE_UFNOME" type="string" visibility="public" />
+    <field name="EMPRE_UFIBGE" type="string" visibility="public" />
+    <field name="EMPRE_PAISIBGE" type="string" visibility="public" />
+    <field name="CONT_CODIGO" type="string" visibility="public" />
+  </struct>
+  <struct name="RLOGININI">
+    <field name="NOMEUSUARIO" type="string" visibility="public" />
+    <field name="NOMECOMPUTADOR" type="string" visibility="public" />
+    <field name="NUMEROIP" type="string" visibility="public" />
+    <field name="NUMEROMAC" type="string" visibility="public" />
+    <field name="NUMEROSERIAL" type="string" visibility="public" />
+    <field name="NUMEROMACATUAL" type="string" visibility="public" />
+    <field name="PROXY" type="string" visibility="public" />
+    <field name="SENHA" type="string" visibility="public" />
+  </struct>
+  <struct name="RGERAL_CONFIGURADOR">
+    <field name="EMPRE_CODIGO" type="string" visibility="public" />
+    <field name="GER_DIASGRAVOSO" type="string" visibility="public" />
+    <field name="GER_DIASBLOQUEIO" type="string" visibility="public" />
+    <field name="GER_DIASREPOUSO" type="string" visibility="public" />
+    <field name="GER_DIASINATIVO" type="string" visibility="public" />
+    <field name="GER_RAMOCLIENTE" type="string" visibility="public" />
+    <field name="GER_PIS" type="string" visibility="public" />
+    <field name="GER_COFINS" type="string" visibility="public" />
+    <field name="GER_CUSADM" type="string" visibility="public" />
+    <field name="GER_IMPOSTOVIG" type="string" visibility="public" />
+    <field name="GER_MARGEMMIN" type="string" visibility="public" />
+    <field name="GER_MARGEMMAX" type="string" visibility="public" />
+    <field name="GER_CPMF" type="string" visibility="public" />
+    <field name="GER_ISSQN" type="string" visibility="public" />
+    <field name="GER_LIVROMES" type="string" visibility="public" />
+    <field name="GER_LIVROANO" type="string" visibility="public" />
+    <field name="GER_BCOCXAMES" type="string" visibility="public" />
+    <field name="GER_BCOCXAANO" type="string" visibility="public" />
+    <field name="GER_DESCESPNOTA" type="string" visibility="public" />
+    <field name="GER_DESCESPITEM" type="string" visibility="public" />
+    <field name="GER_IPITIPO" type="string" visibility="public" />
+    <field name="GER_IPITABELA" type="string" visibility="public" />
+    <field name="GER_ICMPAUTA" type="string" visibility="public" />
+    <field name="GER_ICMPAUTATAB" type="string" visibility="public" />
+    <field name="GER_ACUMULADUPLIC" type="string" visibility="public" />
+    <field name="GER_DIASBLOQMENOS" type="string" visibility="public" />
+    <field name="GER_ENTDECPRECO" type="string" visibility="public" />
+    <field name="GER_ENTDECQUANT" type="string" visibility="public" />
+    <field name="GER_SAIDECPRECO" type="string" visibility="public" />
+    <field name="GER_SAIDECQUANT" type="string" visibility="public" />
+    <field name="GER_NATUREZATROC1" type="string" visibility="public" />
+    <field name="GER_NATUREZATROC2" type="string" visibility="public" />
+    <field name="GER_NATUREZATROC3" type="string" visibility="public" />
+    <field name="GER_PEDIDOMINIMO" type="string" visibility="public" />
+    <field name="GER_BOLETOMINIMO" type="string" visibility="public" />
+    <field name="GER_MULTA" type="string" visibility="public" />
+    <field name="GER_JUROSDIA" type="string" visibility="public" />
+    <field name="GER_JUROSSUP" type="string" visibility="public" />
+    <field name="GER_LIMDIAS" type="string" visibility="public" />
+    <field name="GER_JUROS_TIPO" type="string" visibility="public" />
+    <field name="GER_COMISSAO" type="string" visibility="public" />
+    <field name="GER_FRETE" type="string" visibility="public" />
+  </struct>
+  <struct name="RGERALPREVENDA">
+    <field name="EMPRE_CODIGO" type="Integer" visibility="public" />
+    <field name="PREVENDA_DATA" type="string" visibility="public" />
+    <field name="PREVENDA_CODIGO" type="Integer" visibility="public" />
+    <field name="PREVENDA_OBSERVACAO" type="string" visibility="public" />
+    <field name="PREVENDA_DESCONTO" type="Double" visibility="public" />
+    <field name="PREVENDA_ACRESCIMO" type="Double" visibility="public" />
+    <field name="PREVENDA_ARECEBER" type="Double" visibility="public" />
+    <field name="PREVENDA_TROCO" type="Double" visibility="public" />
+    <field name="PREVENDA_ENTRADA" type="Double" visibility="public" />
+    <field name="PREVENDA_TOTAL" type="Double" visibility="public" />
+    <field name="COND_CODIGO" type="Integer" visibility="public" />
+    <field name="BANCO_CODIGO" type="Integer" visibility="public" />
+    <field name="BANCO_DESCRICAO" type="string" visibility="public" />
+    <field name="NATU_CODIGO" type="Integer" visibility="public" />
+    <field name="NATU_NOME" type="string" visibility="public" />
+    <field name="TIPO" type="string" visibility="public" />
+    <field name="PREVENDA_LEOBSERVACAO" type="string" visibility="public" />
+    <field name="PREVENDA_HORA" type="string" visibility="public" />
+    <field name="REPRE_CODIGO" type="Integer" visibility="public" />
+    <field name="REPRE_CODIGO2" type="string" visibility="public" />
+    <field name="PRECO_TABELA" type="Integer" visibility="public" />
+    <field name="PREVENDA_SITUACAO" type="string" visibility="public" />
+    <field name="CLI_CODIGO" type="Integer" visibility="public" />
+    <field name="PREVENDA_NOMECLIENTE" type="string" visibility="public" />
+    <field name="PREVENDA_CPFCNPJ" type="string" visibility="public" />
+    <field name="PREVENDA_OBS" type="string" visibility="public" />
+    <field name="PREVENDA_DESC_ITEM" type="Double" visibility="public" />
+    <field name="PREVENDA_SUBTOTAL" type="Double" visibility="public" />
+    <field name="PREVENDA_ANO" type="string" visibility="public" />
+    <field name="CLI_CNPJCPF" type="string" visibility="public" />
+    <field name="CLI_RESENDERECO" type="string" visibility="public" />
+    <field name="CLI_RESBAIRRO" type="string" visibility="public" />
+    <field name="CLI_RESENDNUMERO" type="string" visibility="public" />
+    <field name="CLI_TIPOPESSOA" type="string" visibility="public" />
+    <field name="CLI_RESCEP" type="string" visibility="public" />
+    <field name="CLI_RESTELEFONE" type="string" visibility="public" />
+    <field name="CLI_RESCELULAR" type="string" visibility="public" />
+    <field name="CLI_INSCMUN" type="string" visibility="public" />
+    <field name="SITUACAO_CODIGO1" type="string" visibility="public" />
+    <field name="CIDADE_CODDNE" type="string" visibility="public" />
+    <field name="REPRE_DESCRICAO" type="string" visibility="public" />
+    <field name="REPRE_DESCRICAO2" type="string" visibility="public" />
+    <field name="CIDADE_DESCRICAO" type="string" visibility="public" />
+    <field name="CIDADE_UF" type="string" visibility="public" />
+    <field name="SERVICO_SUBTOTAL" type="Double" visibility="public" />
+    <field name="SERVICO_DESCONTO" type="Double" visibility="public" />
+    <field name="SERVICO_ACRESCIMO" type="Double" visibility="public" />
+    <field name="ITENS_SUBTOTAL" type="Double" visibility="public" />
+    <field name="ITENS_DESCONTO" type="Double" visibility="public" />
+    <field name="ITENS_ACRESCIMO" type="Double" visibility="public" />
+    <field name="PREVENDA_FRETE" type="Double" visibility="public" />
+    <field name="PREVENDA_DATAENTREGA" type="string" visibility="public" />
+    <field name="PREVENDA_HORAENTREGA" type="string" visibility="public" />
+    <field name="PREVENDA_TRANSPORTADORA" type="Integer" visibility="public" />
+    <field name="TRANSPORTADORA_DESC" type="string" visibility="public" />
+    <field name="PREVENDA_ORDEMCOMPRA" type="Integer" visibility="public" />
+    <field name="PREVENDA_COND_VLR_01" type="string" visibility="public" />
+    <field name="PREVENDA_COND_DTA_01" type="string" visibility="public" />
+    <field name="PREVENDA_COND_DTA_02" type="string" visibility="public" />
+    <field name="PREVENDA_COND_VLR_02" type="string" visibility="public" />
+    <field name="PREVENDA_COND_DTA_03" type="string" visibility="public" />
+    <field name="PREVENDA_COND_VLR_03" type="string" visibility="public" />
+    <field name="PREVENDA_COND_DTA_04" type="string" visibility="public" />
+    <field name="PREVENDA_COND_VLR_04" type="string" visibility="public" />
+    <field name="PREVENDA_COND_DTA_05" type="string" visibility="public" />
+    <field name="PREVENDA_COND_VLR_05" type="string" visibility="public" />
+    <field name="PREVENDA_COND_DTA_06" type="string" visibility="public" />
+    <field name="PREVENDA_COND_VLR_06" type="string" visibility="public" />
+    <field name="PREVENDA_COND_DTA_07" type="string" visibility="public" />
+    <field name="PREVENDA_COND_VLR_07" type="string" visibility="public" />
+    <field name="PREVENDA_COND_DTA_08" type="string" visibility="public" />
+    <field name="PREVENDA_COND_VLR_08" type="string" visibility="public" />
+    <field name="PREVENDA_COND_DTA_09" type="string" visibility="public" />
+    <field name="PREVENDA_COND_VLR_09" type="string" visibility="public" />
+    <field name="PREVENDA_COND_DTA_10" type="string" visibility="public" />
+    <field name="PREVENDA_COND_VLR_10" type="string" visibility="public" />
+    <field name="PREVENDA_COND_DTA_11" type="string" visibility="public" />
+    <field name="PREVENDA_COND_VLR_11" type="string" visibility="public" />
+    <field name="PREVENDA_COND_DTA_12" type="string" visibility="public" />
+    <field name="PREVENDA_COND_VLR_12" type="string" visibility="public" />
+    <field name="PREVENDA_DATA_FECHAMENTO" type="string" visibility="public" />
+    <field name="PREVENDA_FRETE_TIPO" type="string" visibility="public" />
+    <field name="PREVENDA_CST" type="string" visibility="public" />
+    <field name="PREVENDA_TAB_ICMS" type="string" visibility="public" />
+    <field name="PREVENDA_ICM_BASE" type="string" visibility="public" />
+    <field name="PREVENDA_ICM_ALIQ" type="string" visibility="public" />
+    <field name="PREVENDA_ICM_VALOR" type="string" visibility="public" />
+    <field name="PREVENDA_RED_BASE" type="string" visibility="public" />
+    <field name="PREVENDA_RED_IS" type="string" visibility="public" />
+    <field name="PREVENDA_ICM_ISENTAS" type="string" visibility="public" />
+    <field name="PREVENDA_ICM_OUTRAS" type="string" visibility="public" />
+    <field name="PREVENDA_ALIQ_MVA" type="string" visibility="public" />
+    <field name="PREVENDA_ST_BASE" type="string" visibility="public" />
+    <field name="PREVENDA_ST_ALIQ" type="string" visibility="public" />
+    <field name="PREVENDA_ST_VALOR" type="string" visibility="public" />
+    <field name="PREVENDA_TAB_IPI" type="string" visibility="public" />
+    <field name="PREVENDA_ALIQ_IPI" type="string" visibility="public" />
+    <field name="PREVENDA_IPI_BASE" type="string" visibility="public" />
+    <field name="PREVENDA_IPI_VALOR" type="string" visibility="public" />
+    <field name="PREVENDA_TAB_PIS" type="string" visibility="public" />
+    <field name="PREVENDA_ALIQ_PIS" type="string" visibility="public" />
+    <field name="PREVENDA_PIS_BASE" type="string" visibility="public" />
+    <field name="PREVENDA_PIS_VALOR" type="string" visibility="public" />
+    <field name="PREVENDA_TAB_COFINS" type="string" visibility="public" />
+    <field name="PREVENDA_ALIQ_COFINS" type="string" visibility="public" />
+    <field name="PREVENDA_COFINS_BASE" type="string" visibility="public" />
+    <field name="PREVENDA_COFINS_VALOR" type="string" visibility="public" />
+    <field name="PREVENDA_IO" type="string" visibility="public" />
+    <field name="PREVENDA_S_ICM" type="string" visibility="public" />
+    <field name="PREVENDA_V_IC" type="string" visibility="public" />
+    <field name="PREVENDA_B_PC" type="string" visibility="public" />
+    <field name="PREVENDA_DESCONTO_VALOR" type="Double" visibility="public" />
+  </struct>
+  <struct name="RCONFIGURA_PED_COMPRA">
+    <field name="EMPRE_CODIGO" type="Integer" visibility="public" />
+    <field name="OBS" type="string" visibility="public" />
+    <field name="PROGRAMA" type="string" visibility="public" />
+    <field name="PROD_INI" type="Integer" visibility="public" />
+    <field name="PROD_FIN" type="Integer" visibility="public" />
+    <field name="GRADE_INI" type="Integer" visibility="public" />
+    <field name="GRADE_FIN" type="Integer" visibility="public" />
+    <field name="PEDIDO_PDF" type="string" visibility="public" />
+  </struct>
+  <struct name="RFINANCCONTASRECEBER">
+    <field name="EMPRE_CODIGO" type="Integer" visibility="public" />
+    <field name="CLI_CODIGO" type="Integer" visibility="public" />
+    <field name="CONTREC_NR_FATURA" type="string" visibility="public" />
+    <field name="CONTREC_SIT_TITULO" type="string" visibility="public" />
+    <field name="CONTREC_TIPO_DOCUMENTO" type="string" visibility="public" />
+    <field name="CONTREC_DT_EMISSAO" type="TDateTime" visibility="public" />
+    <field name="CONTREC_REPRE1" type="Integer" visibility="public" />
+    <field name="CONTREC_VLR_ORIGINAL" type="string" visibility="public" />
+    <field name="CONTREC_VALOR_DOCUMENTO" type="string" visibility="public" />
+    <field name="CONTREC_DT_PGTO" type="TDateTime" visibility="public" />
+    <field name="CONTREC_DT_VCTO" type="TDateTime" visibility="public" />
+    <field name="CONTREC_VLR_PGTO" type="string" visibility="public" />
+    <field name="PREVENDA_DATA" type="TDateTime" visibility="public" />
+    <field name="PREVENDA_CODIGO" type="Integer" visibility="public" />
+    <field name="CONTREC_COD_NT" type="string" visibility="public" />
+    <field name="CONTREC_COD_BCO" type="string" visibility="public" />
+    <field name="CONTREC_NR_BARRAS" type="string" visibility="public" />
+  </struct>
+  <struct name="RFINANCCONTASRECBAIXA">
+    <field name="EMPRE_CODIGO" type="Integer" visibility="public" />
+    <field name="CLI_CODIGO" type="Integer" visibility="public" />
+    <field name="CONTREC_NR_FATURA" type="string" visibility="public" />
+    <field name="CONTBAIXA_SEQ" type="Integer" visibility="public" />
+    <field name="CONTBAIXA_DATA_PAGAMENTO" type="TDateTime" visibility="public" />
+    <field name="CONTBAIXA_VLR_PGTO" type="string" visibility="public" />
+  </struct>
+  <struct name="RGERALCONFIGNATUREZA">
+    <field name="NATU_CODIGO" type="Integer" visibility="public" />
+    <field name="NATU_CODFISCALDENTRO" type="string" visibility="public" />
+    <field name="NATU_MARCACFOPDENTRO" type="string" visibility="public" />
+    <field name="NATU_CODFISCALFORA" type="string" visibility="public" />
+    <field name="NATU_MARCACFOPFORA" type="string" visibility="public" />
+    <field name="NATU_CODIGOGIA" type="string" visibility="public" />
+    <field name="NATU_NOME" type="string" visibility="public" />
+    <field name="NATU_ABREV" type="string" visibility="public" />
+    <field name="NATU_CLAFISPRODENT1" type="string" visibility="public" />
+    <field name="NATU_CLAFISPRODENT2" type="string" visibility="public" />
+    <field name="NATU_CLAFISPRODSAI1" type="string" visibility="public" />
+    <field name="NATU_CLAFISPRODSAI2" type="string" visibility="public" />
+    <field name="NATU_MENSAGEM" type="string" visibility="public" />
+    <field name="NATU_TIPO" type="string" visibility="public" />
+    <field name="NATU_EMITENOTA" type="string" visibility="public" />
+    <field name="NATU_LIVROFISCAL" type="string" visibility="public" />
+    <field name="NATU_LFATUAOBS" type="string" visibility="public" />
+    <field name="NATU_LFATUATIPO" type="string" visibility="public" />
+    <field name="NATU_CTARECEBER" type="string" visibility="public" />
+    <field name="DCTA_CODIGO" type="Integer" visibility="public" />
+    <field name="HIST_CODIGO" type="Integer" visibility="public" />
+    <field name="HIST_CODIGO2" type="Integer" visibility="public" />
+    <field name="NATU_CTAPAGAR" type="string" visibility="public" />
+    <field name="NATU_MAPAATUALIZA" type="string" visibility="public" />
+    <field name="NATU_MAPAOPERACAO" type="string" visibility="public" />
+    <field name="NATU_MAPAOPETIPO" type="string" visibility="public" />
+    <field name="BANCO_CODIGO" type="Integer" visibility="public" />
+    <field name="NATU_TABELAPRECO" type="Integer" visibility="public" />
+    <field name="NATU_REPRESENTANTE" type="string" visibility="public" />
+    <field name="NATU_ESTOQUE" type="string" visibility="public" />
+    <field name="NATU_ESTOQUEQTD" type="string" visibility="public" />
+    <field name="NATU_SAIDAQTD" type="string" visibility="public" />
+    <field name="NATU_SAIDAVLR" type="string" visibility="public" />
+    <field name="NATU_ENTRADAQTD" type="string" visibility="public" />
+    <field name="NATU_ENTRADAVLR" type="string" visibility="public" />
+    <field name="NATU_CONTRIBUICAO" type="string" visibility="public" />
+    <field name="NATU_CUSTOCONTRIB" type="string" visibility="public" />
+    <field name="NATU_CUSTOPRODUTO" type="string" visibility="public" />
+    <field name="NATU_CUSTOMEDIO" type="string" visibility="public" />
+    <field name="NATU_PEDELOJADEST" type="string" visibility="public" />
+    <field name="NATU_PEDENFORIGEM" type="string" visibility="public" />
+    <field name="NATU_LCTOVENC" type="string" visibility="public" />
+    <field name="NATU_LCTOVALOR" type="string" visibility="public" />
+    <field name="NATU_TRANSFER" type="Integer" visibility="public" />
+    <field name="NATU_CREDIARIO" type="string" visibility="public" />
+    <field name="NATU_IPI" type="string" visibility="public" />
+    <field name="NATU_PEDEPEDIDO" type="string" visibility="public" />
+    <field name="NATU_PROXIMA" type="Integer" visibility="public" />
+    <field name="NATU_SIMPLESNAC" type="string" visibility="public" />
+    <field name="NATU_SERIE_NFE" type="string" visibility="public" />
+    <field name="NATU_CST" type="string" visibility="public" />
+    <field name="EMPRE_CODIGO" type="string" visibility="public" />
+    <field name="IMPOSTOS3_TABELA" type="string" visibility="public" />
+    <field name="IMPOSTOS4_TABELA" type="string" visibility="public" />
+    <field name="CFOP" type="string" visibility="public" />
+    <field name="CLASSIF_FISCAL" type="string" visibility="public" />
+    <field name="NATU_FINANCEIRO" type="string" visibility="public" />
+    <field name="IMPOSTOS_TABELA2" type="Integer" visibility="public" />
+    <field name="IMPOSTOS_TABELA3" type="Integer" visibility="public" />
+    <field name="UF_FORNECEDOR" type="string" visibility="public" />
+    <field name="CST_ICMS" type="string" visibility="public" />
+  </struct>
+  <struct name="RGERALCONFIGURACONDICOES">
+    <field name="cond_codigo" type="string" visibility="public" />
+    <field name="cond_desdobramento01" type="string" visibility="public" />
+    <field name="cond_desdobramento02" type="string" visibility="public" />
+    <field name="cond_desdobramento03" type="string" visibility="public" />
+    <field name="cond_desdobramento04" type="string" visibility="public" />
+    <field name="cond_desdobramento05" type="string" visibility="public" />
+    <field name="cond_desdobramento06" type="string" visibility="public" />
+    <field name="cond_desdobramento07" type="string" visibility="public" />
+    <field name="cond_desdobramento08" type="string" visibility="public" />
+    <field name="cond_desdobramento09" type="string" visibility="public" />
+    <field name="cond_desdobramento10" type="string" visibility="public" />
+    <field name="cond_desdobramento11" type="string" visibility="public" />
+    <field name="cond_desdobramento12" type="string" visibility="public" />
+    <field name="cond_data_inicial" type="TDateTime" visibility="public" />
+    <field name="cond_dia_fixo" type="string" visibility="public" />
+    <field name="cond_dias_uteis" type="string" visibility="public" />
+  </struct>
+  <struct name="RGERALCONFIGURANUMEROS">
+    <field name="EMPRE_CODIGO" type="string" visibility="public" />
+    <field name="NRO_ENTSERIE" type="string" visibility="public" />
+    <field name="NRO_ENTNOTA" type="string" visibility="public" />
+    <field name="NRO_SAISERIE" type="string" visibility="public" />
+    <field name="NRO_SAINOTA" type="string" visibility="public" />
+    <field name="NRO_LIVROLCTOENT" type="string" visibility="public" />
+    <field name="NRO_LIVROLCTOSAI" type="string" visibility="public" />
+    <field name="NRO_PEDIDO_VENDA" type="string" visibility="public" />
+    <field name="NRO_PEDIDO_VENDA_NR" type="string" visibility="public" />
+    <field name="NRO_PEDIDO_COMPRA" type="string" visibility="public" />
+    <field name="NRO_PEDIDO_COMPRA_NR" type="string" visibility="public" />
+    <field name="NRO_AUTORIZAVENDA" type="string" visibility="public" />
+    <field name="NRO_DESCONTO" type="string" visibility="public" />
+    <field name="NRO_ACRESCIMO" type="string" visibility="public" />
+    <field name="NRO_COMISSAO" type="string" visibility="public" />
+    <field name="NRO_PARCELAS" type="string" visibility="public" />
+    <field name="NRO_RECIBO_RECEBIMENTO" type="string" visibility="public" />
+    <field name="NRO_RECIBO_PAGAMENTO" type="string" visibility="public" />
+    <field name="NRO_RECIBO_VARIAVEL" type="string" visibility="public" />
+  </struct>
+  <struct name="RGERALAUDITORIA">
+    <field name="EMPRE_CODIGO" type="Integer" visibility="public" />
+    <field name="FUNC_CODIGO" type="string" visibility="public" />
+    <field name="MENU_CODIGO" type="string" visibility="public" />
+    <field name="CAMPO_CODIGO" type="string" visibility="public" />
+    <field name="AUDIT_DATA" type="string" visibility="public" />
+    <field name="AUDIT_HORA" type="string" visibility="public" />
+    <field name="AUDIT_ACAO" type="string" visibility="public" />
+    <field name="AUDIT_TABELA" type="string" visibility="public" />
+    <field name="AUDIT_REG_ANTERIOR" type="string" visibility="public" />
+    <field name="AUDIT_REG_ATUAL" type="string" visibility="public" />
+  </struct>
+  <struct name="RAUXAUDITORIA">
+    <field name="CAMPO_CODIGO" type=".2" visibility="public" />
+    <field name="AUDIT_TABELA" type=".3" visibility="public" />
+    <field name="AUDIT_REG_ANTERIOR" type=".4" visibility="public" />
+    <field name="INDICE_COMPONENTE" type=".5" visibility="public" />
+  </struct>
+  <struct name="RGERALCAMPOACESSO">
+    <field name="EMPRE_CODIGO" type=".6" visibility="public" />
+    <field name="FUNC_CODIGO" type=".7" visibility="public" />
+    <field name="MENU_CODIGO" type=".8" visibility="public" />
+    <field name="CAMPO_CODIGO" type=".9" visibility="public" />
+    <field name="CAMPO_SENHA" type=".01" visibility="public" />
+    <field name="CAMPO_OPCAO" type=".11" visibility="public" />
+    <field name="CAMPO_AUDITORIA" type=".21" visibility="public" />
+    <field name="REGISTRO_ANTES" type=".31" visibility="public" />
+    <field name="INDICE_COMPONENTE" type=".41" visibility="public" />
+  </struct>
+  <struct name="RGERALCONFIGURACUPOM">
+    <field name="empre_codigo" type="string" visibility="public" />
+    <field name="confcupom_nr_pedido" type="string" visibility="public" />
+    <field name="confcupom_tef" type="string" visibility="public" />
+    <field name="confcupom_consiste" type="string" visibility="public" />
+    <field name="confcupom_desconto" type="string" visibility="public" />
+    <field name="confcupom_acrescimo" type="string" visibility="public" />
+    <field name="confcupom_qtd_max_item" type="string" visibility="public" />
+    <field name="confcupom_limite" type="string" visibility="public" />
+    <field name="confcupom_estoque" type="string" visibility="public" />
+    <field name="confcupom_reducaoZ" type="string" visibility="public" />
+    <field name="confcupom_rel_gerencial" type="string" visibility="public" />
+    <field name="confcupom_comissao" type="string" visibility="public" />
+    <field name="confcupom_desconto_real" type="string" visibility="public" />
+    <field name="confcupom_acrescimo_real" type="string" visibility="public" />
+    <field name="confcupom_natureza" type="string" visibility="public" />
+    <field name="confcupom_grade" type="string" visibility="public" />
+    <field name="confcupom_barras" type="string" visibility="public" />
+    <field name="confcupom_ped_compras" type="string" visibility="public" />
+    <field name="confcupom_metodo_busca" type="string" visibility="public" />
+    <field name="confcupom_layout_impressao" type="string" visibility="public" />
+    <field name="confcupom_Dias_pontuacao" type="string" visibility="public" />
+    <field name="confcupom_valor" type="string" visibility="public" />
+    <field name="confpontuacao" type="string" visibility="public" />
+    <field name="confcupom_pontuacao_Min" type="string" visibility="public" />
+    <field name="confcupom_naturezas1" type="string" visibility="public" />
+    <field name="confcupom_naturezas2" type="string" visibility="public" />
+    <field name="confcupom_naturezas3" type="string" visibility="public" />
+    <field name="confcupom_naturezas4" type="string" visibility="public" />
+    <field name="confcupom_naturezas5" type="string" visibility="public" />
+    <field name="confcupom_naturezas6" type="string" visibility="public" />
+    <field name="confcupom_naturezas7" type="string" visibility="public" />
+    <field name="confcupom_naturezas8" type="string" visibility="public" />
+    <field name="confcupom_naturezas9" type="string" visibility="public" />
+    <field name="confcupom_naturezas10" type="string" visibility="public" />
+    <field name="confcupom_TodasNatu" type="string" visibility="public" />
+    <field name="confcupom_vlr_min_compra" type="string" visibility="public" />
+    <field name="confDescBonificacao" type="string" visibility="public" />
+    <field name="CONF_ENTRADAAVISTA" type="string" visibility="public" />
+  </struct>
+  <struct name="RCONFIGPEDFAT">
+    <field name="EMPRE_CODIGO" type="Integer" visibility="public" />
+    <field name="CPEDFAT_AUTOMATICO" type="string" visibility="public" />
+    <field name="CPEDFAT_TELEVENDA" type="string" visibility="public" />
+    <field name="CPEDFAT_ROTA" type="string" visibility="public" />
+    <field name="CPEDFAT_DESCONTO" type="string" visibility="public" />
+    <field name="CPEDFAT_ACRESCIMO" type="string" visibility="public" />
+    <field name="CPEDFAT_COMISSAO" type="string" visibility="public" />
+    <field name="CPEDFAT_VENDA" type="string" visibility="public" />
+    <field name="CPEDFAT_NATUREZA" type="string" visibility="public" />
+    <field name="CPEDFAT_BANCO" type="string" visibility="public" />
+    <field name="CPEDFAT_PRAZO" type="string" visibility="public" />
+    <field name="CPEDFAT_TABELA_PRECO" type="string" visibility="public" />
+    <field name="CPEDFAT_FAT_TRANSP" type="string" visibility="public" />
+    <field name="CPEDFAT_FAT_REDESP" type="string" visibility="public" />
+    <field name="CPEDFAT_FAT_DESPESA" type="string" visibility="public" />
+    <field name="CPEDFAT_FAT_VOLUMES" type="string" visibility="public" />
+    <field name="CPEDFAT_FAT_PESOS" type="string" visibility="public" />
+    <field name="CPEDFAT_FAT_FRETE" type="string" visibility="public" />
+    <field name="CPEDFAT_FAT_MENSAGEM" type="string" visibility="public" />
+    <field name="CPEDFAT_FAT_SEGURO" type="string" visibility="public" />
+    <field name="CPEDFAT_FAT_DT_PEDIDO" type="string" visibility="public" />
+    <field name="CPEDFAT_FAT_BXA_ESTOQ" type="string" visibility="public" />
+    <field name="CPEDFAT_PRECO" type="string" visibility="public" />
+  </struct>
+  <struct name="REMPRESAESPECIFICA">
+    <field name="EMPRE_CODIGO" type="string" visibility="public" />
+  </struct>
+  <const name="sSQLSelecionaUsuario" type="string">
+    <value>
+      select * from geral_funcionario where (geral_funcionario.func_codigo = :funccodigo) and       (geral_funcionario.empre_codigo = :emprecodigo)
+    </value>
+  </const>
+  <const name="sSQLSelecionaMenus" type="string">
+    <value>
+      select * from geral_acesso,geral_menu where (geral_acesso.menu_codigo = geral_menu.menu_codigo) and (func_codigo = :funccodigo) and (empre_codigo = :emprecodigo)
+    </value>
+  </const>
+  <const name="sSQLLeBarras" type="string">
+    <value>
+      SELECT EST010.EST010_DESCR,       EST010.EST010_CODIGO,       EST010.EST010_COD_BARRA,       EST010.EST010_PRC_TAB,       EST010.EST010_UNID,       EST010.EST010_GRP,       EST010.EST010_TAB_CF FROM EST010  WHERE EST010_COD_BARRA =:BARRAS
+    </value>
+  </const>
+  <const name="sSQLLeCodigo" type="string">
+    <value>
+      SELECT EST010.EST010_DESCR,       EST010.EST010_CODIGO,       EST010.EST010_COD_BARRA,       EST010.EST010_PRC_TAB,       EST010.EST010_UNID,       EST010.EST010_GRP,       EST010.EST010_TAB_CF FROM EST010  WHERE EST010.EST010_CODIGO =:CODIGO
+    </value>
+  </const>
+  <const name="sSQLLeTabelaPreco" type="string">
+    <value>
+      SELECT * FROM EST010A WHERE (EST010A.EST010A_LOJA = :EST010ALOJA) AND       (EST010A.EST010A_CODIGO = :EST010ACODIGO)
+    </value>
+  </const>
+  <const name="sSQLGravaAuditoria" type="string">
+    <value>
+      INSERT INTO GERAL_AUDITORIA (EMPRE_CODIGO,FUNC_CODIGO,MENU_CODIGO,CAMPO_CODIGO,AUDIT_DATA,AUDIT_HORA,AUDIT_ACAO,AUDIT_TABELA,AUDIT_REG_ANTERIOR,AUDIT_REG_ATUAL) VALUES (:EMPRECODIGO,:FUNCCODIGO,:MENUCODIGO,:CAMPOCODIGO,:AUDITDATA,:AUDITHORA,:AUDITACAO,:AUDITTABELA,:AUDITREGANTERIOR,:AUDITREGATUAL) ON DUPLICATE KEY UPDATE  EMPRE_CODIGO       = :EMPRECODIGO,FUNC_CODIGO		    = :FUNCCODIGO,MENU_CODIGO		    = :MENUCODIGO,CAMPO_CODIGO		    = :CAMPOCODIGO,AUDIT_DATA 	      = :AUDITDATA,AUDIT_HORA 	      = :AUDITHORA,AUDIT_ACAO 	      = :AUDITACAO,AUDIT_TABELA 	    = :AUDITTABELA,AUDIT_REG_ANTERIOR	= :AUDITREGANTERIOR,AUDIT_REG_ATUAL    = :AUDITREGATUAL 
+    </value>
+  </const>
+  <const name="VK_PAGEUP" type="Integer">
+    <value>
+      $21
+    </value>
+  </const>
+  <const name="VK_PAGEDOWN" type="Integer">
+    <value>
+      $22
+    </value>
+  </const>
+  <variable name="Util" type="NFe_Util_2G_Interface" />
+  <variable name="dtmSisGestao" type="TdtmSisGestao" />
+  <variable name="tdSisGestao" type="TTransactionDesc" />
+  <variable name="tfArquivoIni" type="TIniFile" />
+  <variable name="tfArquivoLogin" type="TIniFile" />
+  <variable name="tfControla" type="TIniFile" />
+  <variable name="bAchouArquivoINI" type="Boolean" />
+  <variable name="bTemFilial" type="Boolean" />
+  <variable name="bPastas" type="Boolean" />
+  <variable name="bF12" type="Boolean" />
+  <variable name="bFechacupom" type="Boolean" />
+  <variable name="bimprimePedido" type="Boolean" />
+  <variable name="bFechacupomParcelado" type="Boolean" />
+  <variable name="bTempoNFe" type="Boolean" />
+  <variable name="bNFeAutomatica" type="Boolean" />
+  <variable name="ARQUIVOINI" type="RARQUIVOINI" />
+  <variable name="CONFSISGESTAO" type="RCONFSISGESTAO" />
+  <variable name="CONFIGURA_PED_COMPRA" type="RCONFIGURA_PED_COMPRA" />
+  <variable name="SPEDCONTABIL" type="RCAMINHOCONTBILINI" />
+  <variable name="CONFIGURA_ECF" type="RCONFIGURAECF" />
+  <variable name="CONFIGPEDFAT" type="RCONFIGPEDFAT" />
+  <variable name="ECF" type="RECF" />
+  <variable name="LINHADIGITACAO" type="RLINHADIGITACAO" />
+  <variable name="LINHAFORMATADA" type="RLINHAFORMATADA" />
+  <variable name="CLIENTE" type="RCLIENTE" />
+  <variable name="PARAMETROS" type="RPARAMETROS" />
+  <variable name="PARAMETROS_CAD_EMPRESA" type="RPARAMETRO_EMPRESA" />
+  <variable name="LinhaParcela" type="RLINHAPARCELA" />
+  <variable name="REDUCAO" type="RREDUCAO" />
+  <variable name="GERAL_ETIQUETA" type="RCONFIGURAETIQUETAS" />
+  <variable name="GERAL_CONFIGURADOR" type="RGERAL_CONFIGURADOR" />
+  <variable name="GERALAUDITORIA" type="RGERALAUDITORIA" />
+  <variable name="AUXAUDITORIA" type="RAUXAUDITORIA" />
+  <variable name="GERALCAMPOACESSO" type="RGERALCAMPOACESSO" />
+  <variable name="FUNCIONARIO" type="RFUNCIONARIO" />
+  <variable name="LOGININI" type="RLOGININI" />
+  <variable name="sArquivoSobre" type="string" />
+  <variable name="sCaminhoIni" type="string" />
+  <variable name="sCaminhoExe" type="string" />
+  <variable name="sAcao" type="string" />
+  <variable name="sConexao" type="string" />
+  <variable name="sFuncCodigo" type="string" />
+  <variable name="sSenhaSenha" type="string" />
+  <variable name="sRet" type="string" />
+  <variable name="sEmpresa" type="string" />
+  <variable name="sCaminhoSkin" type="string" />
+  <variable name="sArquivoINI" type="string" />
+  <variable name="sErro" type="string" />
+  <variable name="sCaminho" type="string" />
+  <variable name="sRetorno" type="string" />
+  <variable name="sAcaoNFe" type="string" />
+  <variable name="sAcaoInt" type="string" />
+  <variable name="sLiberaEnvio" type="string" />
+  <variable name="bmPontoDeVolta" type="Pointer" />
+  <variable name="ifArquivo" type="TIniFile" />
+  <variable name="aPasta">
+    <array low="0" high="9" generated="true">
+      <element type="string" />
+    </array>
+  </variable>
+  <variable name="aFamiliasSelecionas" type=".61" />
+  <variable name="aVendedoresSelecionados" type=".61" />
+  <variable name="FINANCCONTASRECEBER" type="RFINANCCONTASRECEBER" />
+  <variable name="FINANCCONTASRECBAIXA" type="RFINANCCONTASRECBAIXA" />
+  <variable name="GERALCONFIGNATUREZA" type="RGERALCONFIGNATUREZA" />
+  <variable name="GERALCONFIGURACONDICOES" type="RGERALCONFIGURACONDICOES" />
+  <variable name="GERALCONFIGURA_NUMEROS" type="RGERALCONFIGURANUMEROS" />
+  <variable name="GERALCONFIGURACUPOM" type="RGERALCONFIGURACUPOM" />
+  <variable name="GERALKARDEX" type="RGERALKARDEX" />
+  <variable name="GERALNOTA" type="RGERALNOTA" />
+  <variable name="GERALFORMAPAGAMENTO" type="RGERALFORMAPAGAMENTO" />
+  <variable name="GERALCLIENTE" type="RGERALCLIENTE" />
+  <variable name="GERALIMPOSTOS" type="RGERALIMPOSTOS" />
+  <variable name="GERALPRODUTOSHISTORICO" type="RGERALPRODUTOHISTORICO" />
+  <variable name="GERALLIVROSAIDA" type="RGERALLIVROSAIDA" />
+  <variable name="GERALESTMES" type="RGERALESTMES" />
+  <variable name="GERALESTMVTO" type="RGERALESTMVTO" />
+  <variable name="GERAL_BANCO" type="RGERAL_BANCO" />
+  <variable name="GERAL_PRODUTOS" type="RGERALPRODUTOS" />
+  <variable name="CONFIGURA_PEDIDO" type="RCONFIGURADORPEDIDO" />
+  <variable name="GERALIBPT" type="RGERALIBPT" />
+  <variable name="CONFIGURA_REPRE" type="RCONFIGURA_REPRE" />
+  <variable name="GERALITEM" type="RGERALITEM" />
+  <variable name="GERALCOMISSAO" type="RGERALCOMISSAO" />
+  <variable name="GERALITEMGRADE" type="RGERALITEMGRADE" />
+  <variable name="GERAL_BANCO_PARCELADO" type="RGERAL_BANCO_PARCELADO" />
+  <variable name="GERALTRIBUTACAOPRODUTO" type="RGERALTRIBUTACAOPRODUTO" />
+  <variable name="GERALPREVENDA" type="RGERALPREVENDA" />
+  <variable name="EMPRESA_ESPECIFICAS" type="REMPRESAESPECIFICA" />
+  <variable name="iNivel" type="Integer" />
+  <procedure name="Limpa_variavel" visibility="private">
+    <parameters>
+      <parameter name="pRetorno" type="string" paramflags="var" />
+    </parameters>
+  </procedure>
+  <function name="VerificaTipoUsuario" visibility="private">
+    <parameters>
+      <parameter name="pFuncCodigo" type="string" />
+      <parameter name="pEmpreCodigo" type="Double" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+  <function name="VerificaCadastroMenu" visibility="private">
+    <parameters>
+      <parameter name="pFuncCodigo" type="string" />
+      <parameter name="pMenuCodigo" type="string" />
+      <parameter name="pEmpreCodigo" type="Double" />
+      <parameter name="pNivel" type="string" paramflags="var" />
+      <retval type="Boolean" />
+    </parameters>
+  </function>
+</namespace>
